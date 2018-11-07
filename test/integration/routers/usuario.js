@@ -1,4 +1,4 @@
-describe('Routes: usuario', () => {
+describe('Routers: usuario', () => {
 	const table = '\'usuario\'';
 	const { Usuario } = app.datasource.models;
 	const defaultUsuario = {
@@ -53,7 +53,6 @@ describe('Routes: usuario', () => {
 				.send(newUsuario)
 				.set('Accept', 'application/json')
 				.end((err, res) => {
-					console.log(res.body);
 					expect(res.body).to.be.eql(newUsuario);
 					done(err);
 				});

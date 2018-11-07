@@ -1,27 +1,29 @@
-describe('ROTAS Usuario', () => {
-	const Admin = app.datasource.models.ADMIN;
+describe('Contract: usuario', () => {
+	const table = '\'usuario\'';
+	const { Usuario } = app.datasource.models;
 	const defaultUsuario = {
-		ADMIN_ID: 1,
-		NOME: 'nome',
-		USUARIO: 'usuario',
-		SENHA: 'password',
-		EMAIL: 'email@email.com',
+		id: 1,
+		nome: 'nome',
+		usuario: 'usuario',
+		senha: 'password',
+		email: 'email@email.com',
 	};
+
 	beforeEach((done) => {
-		Admin
+		Usuario
 			.destroy({ where: {} })
-			.then(() => Admin.create(defaultUsuario))
+			.then(() => Usuario.create(defaultUsuario))
 			.then(() => done());
 	});
 
 	describe('GET /usuario', () => {
-		it('Deve retornar uma lista de usuarios', (done) => {
+		it(`should return a list of  ${table}`, (done) => {
 			const adminList = Joi.array().items(Joi.object().keys({
-				ADMIN_ID: Joi.number(),
-				NOME: Joi.string(),
-				USUARIO: Joi.string(),
-				SENHA: Joi.string(),
-				EMAIL: Joi.string(),
+				id: Joi.number(),
+				nome: Joi.string(),
+				usuario: Joi.string(),
+				senha: Joi.string(),
+				email: Joi.string(),
 			}));
 
 			request
@@ -34,13 +36,13 @@ describe('ROTAS Usuario', () => {
 	});
 
 	describe('GET /usuario/{id}', () => {
-		it('Deve retornar um usuario', (done) => {
+		it(`should return a ${table}`, (done) => {
 			const admin = Joi.object().keys({
-				ADMIN_ID: Joi.number(),
-				NOME: Joi.string(),
-				USUARIO: Joi.string(),
-				SENHA: Joi.string(),
-				EMAIL: Joi.string(),
+				id: Joi.number(),
+				nome: Joi.string(),
+				usuario: Joi.string(),
+				senha: Joi.string(),
+				email: Joi.string(),
 			});
 
 			request
@@ -53,21 +55,23 @@ describe('ROTAS Usuario', () => {
 	});
 
 	describe('POST /usuario', () => {
-		it('Deve criar um usuario', (done) => {
+		it(`should create a ${table}`, (done) => {
 			const newUsuario = {
-				ADMIN_ID: 2,
-				NOME: 'nome 2',
-				USUARIO: 'usuario 2',
-				SENHA: 'password 2',
-				EMAIL: 'email2@email.com',
+				id: 2,
+				nome: 'nome 2',
+				usuario: 'usuario 2',
+				senha: 'password 2',
+				email: 'email2@email.com',
 			};
+
 			const admin = Joi.object().keys({
-				ADMIN_ID: Joi.number(),
-				NOME: Joi.string(),
-				USUARIO: Joi.string(),
-				SENHA: Joi.string(),
-				EMAIL: Joi.string(),
+				id: Joi.number(),
+				nome: Joi.string(),
+				usuario: Joi.string(),
+				senha: Joi.string(),
+				email: Joi.string(),
 			});
+
 			request
 				.post('/usuario')
 				.send(newUsuario)
@@ -79,13 +83,13 @@ describe('ROTAS Usuario', () => {
 	});
 
 	describe('PUT /usuario/{id}', () => {
-		it('Deve atualizar um usuario', (done) => {
+		it(`should update a ${table}`, (done) => {
 			const updatedUsuario = {
-				ADMIN_ID: 1,
-				NOME: 'attnome 2',
-				USUARIO: 'attusuario 2',
-				SENHA: 'attpassword2',
-				EMAIL: 'attemail2@email.com',
+				id: 2,
+				nome: 'nome 2',
+				usuario: 'usuario 2',
+				senha: 'password 2',
+				email: 'email2@email.com',
 			};
 			const updatedCount = Joi.array().items(1);
 			request
@@ -99,7 +103,7 @@ describe('ROTAS Usuario', () => {
 	});
 
 	describe('DELETE /usuario/{id}', () => {
-		it('Deve deletar um usuario', (done) => {
+		it(`should deleta a ${table}`, (done) => {
 			request
 				.delete('/usuario/1')
 				.end((err, res) => {
