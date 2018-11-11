@@ -14,6 +14,7 @@ describe('Controller: usuario', () => {
 				usuario: 'usuario',
 				senha: 'password',
 				email: 'email@email.com',
+				nivel: 2
 			};
 			td.when(Usuario.findAll({})).thenResolve(expectedResponse);
 			const usuarioController = new UsuarioController(Usuario);
@@ -34,6 +35,7 @@ describe('Controller: usuario', () => {
 				usuario: 'usuario',
 				senha: 'password',
 				email: 'email@email.com',
+				nivel: 2
 			};
 			td.when(Usuario.findOne({ where: { id: 1 } })).thenResolve(expectedResponse);
 			const usuarioController = new UsuarioController(Usuario);
@@ -53,6 +55,7 @@ describe('Controller: usuario', () => {
 				usuario: 'usuario 1',
 				senha: 'password 1',
 				email: 'email1@email.com',
+				nivel: 2
 			};
 			const expectedResponse = {
 				id: 1,
@@ -60,6 +63,7 @@ describe('Controller: usuario', () => {
 				usuario: 'usuario 1',
 				senha: 'password 1',
 				email: 'email1@email.com',
+				nivel: 2
 			};
 
 			td.when(Usuario.create(requestBody)).thenResolve(expectedResponse);
@@ -84,6 +88,7 @@ describe('Controller: usuario', () => {
 				usuario: 'usuario 1',
 				senha: 'password 1',
 				email: 'email1@email.com',
+				nivel: 2
 			};
 			const expectedResponse = {
 				id: 1,
@@ -91,6 +96,7 @@ describe('Controller: usuario', () => {
 				usuario: 'usuario 1',
 				senha: 'password 1',
 				email: 'email1@email.com',
+				nivel: 2
 			};
 
 			td.when(Usuario.update(requestBody, { where: { id: 1 } })).thenResolve(expectedResponse);

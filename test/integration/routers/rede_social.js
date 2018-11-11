@@ -1,57 +1,52 @@
-describe('Routers: usuario', () => {
-	const table = '\'usuario\'';
-	const { Usuario } = app.datasource.models;
-	const defaultUsuario = {
+describe('Routers: rede social', () => {
+	const table = '\'rede_social\'';
+	const { Rede_social } = app.datasource.models;
+	const defaultRedeSocial = {
 		id: 1,
-		nome: 'nome',
-		usuario: 'usuario',
-		senha: 'password',
-		email: 'email@email.com',
-		nivel: 2
+		url: 'https://facebook.com.br/teste',
+		rede: 1,
 	};
+
 	beforeEach((done) => {
-		Usuario
+		Rede_social
 			.destroy({ where: {} })
-			.then(() => Usuario.create(defaultUsuario))
+			.then(() => Rede_social.create(defaultRedeSocial))
 			.then(() => done());
 	});
 
-	describe('GET /usuario', () => {
+	describe('GET /rede-social', () => {
 		it(`should return a list of ${table}`, (done) => {
 			request
-				.get('/usuario')
+				.get('/rede-social')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
-					expect(res.body[0]).to.be.eql(defaultUsuario);
+					expect(res.body[0]).to.be.eql(defaultRedeSocial);
 					done(err);
 				});
 		});
 	});
 
-	describe('GET /usuario/{id}', () => {
+	describe('GET /rede-social/{id}', () => {
 		it(`should return a ${table} by id`, (done) => {
 			request
-				.get('/usuario/1')
+				.get('/rede-social/1')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
-					expect(res.body).to.be.eql(defaultUsuario);
+					expect(res.body).to.be.eql(defaultRedeSocial);
 					done(err);
 				});
 		});
 	});
 
-	describe('POST /usuario', () => {
+	describe('POST /rede-social', () => {
 		it(`should create a ${table}`, (done) => {
 			const newUsuario = {
 				id: 2,
-				nome: 'nome 2',
-				usuario: 'usuario 2',
-				senha: 'password 2',
-				email: 'email2@email.com',
-				nivel: 2
+				url: 'https://facebook.com.br/teste2',
+				rede: 2,
 			};
 			request
-				.post('/usuario')
+				.post('/rede-social')
 				.send(newUsuario)
 				.set('Accept', 'application/json')
 				.end((err, res) => {
@@ -61,18 +56,14 @@ describe('Routers: usuario', () => {
 		});
 	});
 
-	describe('PUT /usuario/{id}', () => {
+	describe('PUT /rede-social/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
 			const updatedUsuario = {
-				id: 1,
-				nome: 'attnome 2',
-				usuario: 'attusuario2',
-				senha: 'attpassword2',
-				email: 'attemail2@email.com',
-				nivel: 2
+				url: 'https://facebook.com.br/teste-atualizado',
+				rede: 3,
 			};
 			request
-				.put('/usuario/1')
+				.put('/rede-social/1')
 				.send(updatedUsuario)
 				.end((err, res) => {
 					expect(res.body).to.be.eql([1]);
@@ -81,10 +72,10 @@ describe('Routers: usuario', () => {
 		});
 	});
 
-	describe('DELETE /usuario/{id}', () => {
+	describe('DELETE /rede-social/{id}', () => {
 		it(`should delete a ${table} by id`, (done) => {
 			request
-				.delete('/usuario/1')
+				.delete('/rede-social/1')
 				.end((err, res) => {
 					expect(res.statusCode).to.be.eql(204);
 					done(err);

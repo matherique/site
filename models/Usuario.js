@@ -23,18 +23,22 @@ export default (sequelize, DataTypes) => {
 			type: DataTypes.STRING(150),
 			allowNull: true,
 		},
+		nivel: {
+			type: DataTypes.BOOLEAN(1),
+			allowNull: false
+		},
 	},
-	{
-		hooks: {
-			beforeCreate: (user) => {
-				const salt = bcrypt.genSaltSync();
-				user.set('password', bcrypt.hashSync(user.senha, salt));
+		{
+			hooks: {
+				beforeCreate: (user) => {
+					const salt = bcrypt.genSaltSync();
+					user.set('password', bcrypt.hashSync(user.senha, salt));
+				},
 			},
-		},
-		classMethods: {
-			isPassword: (encodedPassword, password) => bcrypt.compareSync(password, encodedPassword),
-		},
-	});
+			classMethods: {
+				isPassword: (encodedPassword, password) => bcrypt.compareSync(password, encodedPassword),
+			},
+		});
 
 	return Usuario;
 };

@@ -1,35 +1,29 @@
-describe('Contract: usuario', () => {
-	const table = '\'usuario\'';
-	const { Usuario } = app.datasource.models;
-	const defaultUsuario = {
+describe('Contract: rede social', () => {
+	const table = '\'rede_social\'';
+	const { Rede_social } = app.datasource.models;
+	const defaultRedeSocial = {
 		id: 1,
-		nome: 'nome',
-		usuario: 'usuario',
-		senha: 'password',
-		email: 'email@email.com',
-		nivel: 2
+		url: 'https://facebook.com.br/teste',
+		rede: 1,
 	};
 
 	beforeEach((done) => {
-		Usuario
+		Rede_social
 			.destroy({ where: {} })
-			.then(() => Usuario.create(defaultUsuario))
+			.then(() => Rede_social.create(defaultRedeSocial))
 			.then(() => done());
 	});
 
-	describe('GET /usuario', () => {
+	describe('GET /rede-social', () => {
 		it(`should return a list of  ${table}`, (done) => {
 			const adminList = Joi.array().items(Joi.object().keys({
 				id: Joi.number(),
-				nome: Joi.string(),
-				usuario: Joi.string(),
-				senha: Joi.string(),
-				email: Joi.string(),
-				nivel: Joi.number(),
+				url: Joi.string(),
+				rede: Joi.number(),
 			}));
 
 			request
-				.get('/usuario')
+				.get('/rede-social')
 				.end((err, res) => {
 					joiAssert(res.body, adminList);
 					done(err);
@@ -37,19 +31,16 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('GET /usuario/{id}', () => {
+	describe('GET /rede-social/{id}', () => {
 		it(`should return a ${table}`, (done) => {
 			const admin = Joi.object().keys({
 				id: Joi.number(),
-				nome: Joi.string(),
-				usuario: Joi.string(),
-				senha: Joi.string(),
-				email: Joi.string(),
-				nivel: Joi.number(),
+				url: Joi.string(),
+				rede: Joi.number(),
 			});
 
 			request
-				.get('/usuario/1')
+				.get('/rede-social/1')
 				.end((err, res) => {
 					joiAssert(res.body, admin);
 					done(err);
@@ -57,28 +48,22 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('POST /usuario', () => {
+	describe('POST /rede-social', () => {
 		it(`should create a ${table}`, (done) => {
 			const newUsuario = {
 				id: 2,
-				nome: 'nome 2',
-				usuario: 'usuario 2',
-				senha: 'password 2',
-				email: 'email2@email.com',
-				nivel: 2,
+				url: 'https://facebook.com.br/teste2',
+				rede: 4,
 			};
 
 			const admin = Joi.object().keys({
 				id: Joi.number(),
-				nome: Joi.string(),
-				usuario: Joi.string(),
-				senha: Joi.string(),
-				email: Joi.string(),
-				nivel: Joi.number(),
+				url: Joi.string(),
+				rede: Joi.number(),
 			});
 
 			request
-				.post('/usuario')
+				.post('/rede-social')
 				.send(newUsuario)
 				.end((err, res) => {
 					joiAssert(res.body, admin);
@@ -87,19 +72,16 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('PUT /usuario/{id}', () => {
+	describe('PUT /rede-social/{id}', () => {
 		it(`should update a ${table}`, (done) => {
 			const updatedUsuario = {
 				id: 2,
-				nome: 'nome 2',
-				usuario: 'usuario 2',
-				senha: 'password 2',
-				email: 'email2@email.com',
-				nivel: 2,
+				url: 'https://facebook.com.br/teste2',
+				rede: 3,
 			};
 			const updatedCount = Joi.array().items(1);
 			request
-				.put('/usuario/1')
+				.put('/rede-social/1')
 				.send(updatedUsuario)
 				.end((err, res) => {
 					joiAssert(res.body, updatedCount);
@@ -108,10 +90,10 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('DELETE /usuario/{id}', () => {
+	describe('DELETE /rede-social/{id}', () => {
 		it(`should deleta a ${table}`, (done) => {
 			request
-				.delete('/usuario/1')
+				.delete('/rede-social/1')
 				.end((err, res) => {
 					expect(res.statusCode).to.be.eql(204);
 					done(err);

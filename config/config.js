@@ -9,7 +9,9 @@ export default {
 		define: {
 			timestamps: false,
 			underscored: true,
+			freezeTableName: true,
 		},
+
 	},
 	jwtSecret: 'huehuesession',
 	jwtSession: { session: false },
