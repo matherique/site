@@ -15,8 +15,6 @@ app.datasource = datasource(app);
 app.set('port', 5000);
 app.use(bodyParser.json());
 
-
-
 // const auth = authorization(app);
 // app.use(auth.initialize());
 // app.auth = auth;
