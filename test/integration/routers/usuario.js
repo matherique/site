@@ -3,7 +3,7 @@ import seed from '../../seed';
 describe('Routers: usuario', () => {
 	const table = '\'usuario\'';
 	const { Usuario } = app.datasource.models;
-	const defaultUsuario = seed.usuario.default;
+	const defaultUsuario = seed.usuario.default;  
 	beforeEach((done) => {
 		Usuario
 			.destroy({ where: {} })

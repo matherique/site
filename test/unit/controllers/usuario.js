@@ -1,4 +1,8 @@
 import UsuarioController from '../../../controllers/usuario';
+import seed from '../../seed';
+
+// dados testes 
+const { usuario } = seed;
 
 describe('Controller: usuario', () => {
 	const table = '\'usuario\'';
@@ -8,14 +12,7 @@ describe('Controller: usuario', () => {
 			const Usuario = {
 				findAll: td.function(),
 			};
-			const expectedResponse = {
-				id: 1,
-				nome: 'nome',
-				usuario: 'usuario',
-				senha: 'password',
-				email: 'email@email.com',
-				nivel: 2
-			};
+			const expectedResponse = usuario.default;
 			td.when(Usuario.findAll({})).thenResolve(expectedResponse);
 			const usuarioController = new UsuarioController(Usuario);
 
@@ -29,14 +26,7 @@ describe('Controller: usuario', () => {
 			const Usuario = {
 				findOne: td.function(),
 			};
-			const expectedResponse = {
-				id: 1,
-				nome: 'nome',
-				usuario: 'usuario',
-				senha: 'password',
-				email: 'email@email.com',
-				nivel: 2
-			};
+			const expectedResponse = usuario.default;
 			td.when(Usuario.findOne({ where: { id: 1 } })).thenResolve(expectedResponse);
 			const usuarioController = new UsuarioController(Usuario);
 
@@ -50,21 +40,10 @@ describe('Controller: usuario', () => {
 			const Usuario = {
 				create: td.function(),
 			};
-			const requestBody = {
-				nome: 'nome 1',
-				usuario: 'usuario 1',
-				senha: 'password 1',
-				email: 'email1@email.com',
-				nivel: 2
-			};
-			const expectedResponse = {
-				id: 1,
-				nome: 'nome 1',
-				usuario: 'usuario 1',
-				senha: 'password 1',
-				email: 'email1@email.com',
-				nivel: 2
-			};
+    
+			const requestBody = usuario.create;
+      delete requestBody.id;
+      const expectedResponse = usuario.create;
 
 			td.when(Usuario.create(requestBody)).thenResolve(expectedResponse);
 
@@ -83,22 +62,9 @@ describe('Controller: usuario', () => {
 			const Usuario = {
 				update: td.function(),
 			};
-			const requestBody = {
-				nome: 'nome 1',
-				usuario: 'usuario 1',
-				senha: 'password 1',
-				email: 'email1@email.com',
-				nivel: 2
-			};
-			const expectedResponse = {
-				id: 1,
-				nome: 'nome 1',
-				usuario: 'usuario 1',
-				senha: 'password 1',
-				email: 'email1@email.com',
-				nivel: 2
-			};
-
+			const requestBody = usuario.create;      
+			delete requestBody.id;                   
+			const expectedResponse = usuario.create; 
 			td.when(Usuario.update(requestBody, { where: { id: 1 } })).thenResolve(expectedResponse);
 
 			const usuarioController = new UsuarioController(Usuario);

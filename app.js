@@ -7,6 +7,7 @@ import Usuario from './routes/usuario';
 import RedeSocial from './routes/rede_social';
 import Newsletter from './routes/newsletter';
 import InfoSite from './routes/info_site';
+import Endereco from './routes/endereco';
 
 const app = express();
 
@@ -23,10 +24,12 @@ const usuario = Usuario(app);
 const redesocial = RedeSocial(app);
 const newsletter = Newsletter(app);
 const infosite = InfoSite(app);
+const endereco = Endereco(app);
 
 app.use('/usuario', usuario);
 app.use('/rede-social', redesocial);
 app.use('/newsletter', newsletter);
 app.use('/info-site', infosite);
+app.use('/endereco', endereco);
 
 export default app;
