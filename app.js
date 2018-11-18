@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 // app.use(auth.initialize());
 // app.auth = auth;
 
-const usuario = Usuario(app);
+const usuario = Usuario(app)
 const redesocial = RedeSocial(app);
 const newsletter = Newsletter(app);
 const infosite = InfoSite(app);
