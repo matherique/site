@@ -1,14 +1,9 @@
+import seed from '../../seed';
+
 describe('Routers: usuario', () => {
 	const table = '\'usuario\'';
 	const { Usuario } = app.datasource.models;
-	const defaultUsuario = {
-		id: 1,
-		nome: 'nome',
-		usuario: 'usuario',
-		senha: 'password',
-		email: 'email@email.com',
-		nivel: 2
-	};
+	const defaultUsuario = seed.usuario.default;
 	beforeEach((done) => {
 		Usuario
 			.destroy({ where: {} })
@@ -42,14 +37,7 @@ describe('Routers: usuario', () => {
 
 	describe('POST /usuario', () => {
 		it(`should create a ${table}`, (done) => {
-			const newUsuario = {
-				id: 2,
-				nome: 'nome 2',
-				usuario: 'usuario 2',
-				senha: 'password 2',
-				email: 'email2@email.com',
-				nivel: 2
-			};
+			const newUsuario = seed.usuario.create;
 			request
 				.post('/usuario')
 				.send(newUsuario)
@@ -63,14 +51,7 @@ describe('Routers: usuario', () => {
 
 	describe('PUT /usuario/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
-			const updatedUsuario = {
-				id: 1,
-				nome: 'attnome 2',
-				usuario: 'attusuario2',
-				senha: 'attpassword2',
-				email: 'attemail2@email.com',
-				nivel: 2
-			};
+			const updatedUsuario = seed.usuario.update;
 			request
 				.put('/usuario/1')
 				.send(updatedUsuario)

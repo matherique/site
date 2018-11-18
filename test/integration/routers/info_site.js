@@ -1,7 +1,6 @@
 describe('Routers: Infos Site', () => {
 	const table = '\'info_site\'';
 	const { Info_site } = app.datasource.models;
-	console.log(app.datasource.models);
 	const defaultInfoSite = {
 		id: 1,
 		hora_abre: 2,
