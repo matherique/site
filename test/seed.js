@@ -18,7 +18,7 @@ export default {
 		},
 		update: {
 			id: 1,
-			nome: 'attnome 2',
+			nome: 'att nome 2',
 			usuario: 'attusuario2',
 			senha: 'attpassword2',
 			email: 'attemail2@email.com',
