@@ -1,16 +1,11 @@
+import seed from '../../seed';
+
+const { info_site } = seed;
+
 describe('Routers: Infos Site', () => {
 	const table = '\'info_site\'';
 	const { Info_site } = app.datasource.models;
-	const defaultInfoSite = {
-		id: 1,
-		hora_abre: 2,
-		hora_ini_almoco: 3,
-		hora_fim_almoco: 3,
-		hora_fecha: 3,
-		hora_abre_fds: 3,
-		email: 'emailteste@teste.com',
-		dia_funcional: 3,
-	};
+	const defaultInfoSite = info_site.default;
 
 	beforeEach((done) => {
 		Info_site
@@ -45,16 +40,7 @@ describe('Routers: Infos Site', () => {
 
 	describe('POST /info-site', () => {
 		it(`should create a ${table}`, (done) => {
-			const newsNewsletter = {
-				id: 2,
-				hora_abre: 3,
-				hora_ini_almoco: 3,
-				hora_fim_almoco: 3,
-				hora_fecha: 3,
-				hora_abre_fds: 3,
-				email: 'emailteste2@teste.com',
-				dia_funcional: 3,
-			};
+			const newsNewsletter = info_site.create;
 
 			request
 				.post('/info-site')
@@ -69,15 +55,7 @@ describe('Routers: Infos Site', () => {
 
 	describe('PUT /info-site/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
-			const updatedUsuario = {
-				hora_abre: 3,
-				hora_ini_almoco: 3,
-				hora_fim_almoco: 3,
-				hora_fecha: 3,
-				hora_abre_fds: 3,
-				email: 'emailteste2@teste.com',
-				dia_funcional: 3,
-			};
+			const updatedUsuario = info_site.update;
 			request
 				.put('/info-site/1')
 				.send(updatedUsuario)
