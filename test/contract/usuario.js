@@ -1,14 +1,11 @@
+import seed from '../seed';
+
+const { usuario } = seed;
+
 describe('Contract: usuario', () => {
 	const table = '\'usuario\'';
 	const { Usuario } = app.datasource.models;
-	const defaultUsuario = {
-		id: 1,
-		nome: 'nome',
-		usuario: 'usuario',
-		senha: 'password',
-		email: 'email@email.com',
-		nivel: 2
-	};
+	const defaultUsuario = usuario.default;
 
 	beforeEach((done) => {
 		Usuario
@@ -59,15 +56,7 @@ describe('Contract: usuario', () => {
 
 	describe('POST /usuario', () => {
 		it(`should create a ${table}`, (done) => {
-			const newUsuario = {
-				id: 2,
-				nome: 'nome 2',
-				usuario: 'usuario 2',
-				senha: 'password 2',
-				email: 'email2@email.com',
-				nivel: 2,
-			};
-
+			const newUsuario = usuario.create;
 			const admin = Joi.object().keys({
 				id: Joi.number(),
 				nome: Joi.string(),
@@ -89,14 +78,8 @@ describe('Contract: usuario', () => {
 
 	describe('PUT /usuario/{id}', () => {
 		it(`should update a ${table}`, (done) => {
-			const updatedUsuario = {
-				id: 2,
-				nome: 'nome 2',
-				usuario: 'usuario 2',
-				senha: 'password 2',
-				email: 'email2@email.com',
-				nivel: 2,
-			};
+			const updatedUsuario = usuario.update;
+
 			const updatedCount = Joi.array().items(1);
 			request
 				.put('/usuario/1')

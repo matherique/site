@@ -1,9 +1,11 @@
 import seed from '../../seed';
 
+const { usuario } = seed;
+
 describe('Routers: usuario', () => {
 	const table = '\'usuario\'';
 	const { Usuario } = app.datasource.models;
-	const defaultUsuario = seed.usuario.default;  
+	const defaultUsuario = usuario.default;
 	beforeEach((done) => {
 		Usuario
 			.destroy({ where: {} })
@@ -37,7 +39,7 @@ describe('Routers: usuario', () => {
 
 	describe('POST /usuario', () => {
 		it(`should create a ${table}`, (done) => {
-			const newUsuario = seed.usuario.create;
+			const newUsuario = usuario.create;
 			request
 				.post('/usuario')
 				.send(newUsuario)
@@ -51,7 +53,7 @@ describe('Routers: usuario', () => {
 
 	describe('PUT /usuario/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
-			const updatedUsuario = seed.usuario.update;
+			const updatedUsuario = usuario.update;
 			request
 				.put('/usuario/1')
 				.send(updatedUsuario)

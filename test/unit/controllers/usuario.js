@@ -23,9 +23,8 @@ describe('Controller: usuario', () => {
 
 	describe(`Get a ${table} by id: getById()`, () => {
 		it(`should return a ${table} by id`, () => {
-			const Usuario = {
-				findOne: td.function(),
-			};
+			const Usuario = {	findOne: td.function(), };
+
 			const expectedResponse = usuario.default;
 			td.when(Usuario.findOne({ where: { id: 1 } })).thenResolve(expectedResponse);
 			const usuarioController = new UsuarioController(Usuario);
