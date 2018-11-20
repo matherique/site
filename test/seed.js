@@ -94,7 +94,7 @@ seed.info_site.create = {
 	id: 2,
 	hora_abre: 2,
 	hora_ini_almoco: 3,
-	hora_fim_almoco: 1,
+	hora_fim_almoco: 4,
 	hora_fecha: 3,
 	hora_abre_fds: 3,
 	email: faker.internet.email(),
@@ -116,21 +116,22 @@ seed.info_site.update = {
 // CONFIG
 seed.config = {};
 seed.config.default = {
-	id: 1,
-	title: faker.lorem.words(),
-	keywords: faker.lorem.sentense().split(' ').jon(', '),
-	description: faker.lorem.lines(),
-	cache_control: 2,
-	language: 1,
-	robots: 2,
-	rodape: faker.lorem.words(),
-	info_site: 1,
+  id: 1,
+  title: faker.lorem.words(),
+  keywords: faker.lorem.sentences().split(' ').join(', '),
+  description: faker.lorem.lines(),
+  cache_control: 2,
+  language: 1,
+  robots: 2,
+  rodape: faker.lorem.words(),
+  info_site: 1,
 };
 faker.seed(42356);
+
 seed.config.create = {
 	id: 2,
 	title: faker.lorem.words(),
-	keywords: faker.lorem.sentense().split(' ').jon(', '),
+	keywords: faker.lorem.sentences().split(' ').join(', '),
 	description: faker.lorem.lines(),
 	cache_control: 3,
 	language: 1,
@@ -142,7 +143,7 @@ faker.seed(223141);
 seed.config.update = {
 	id: 1,
 	title: faker.lorem.words(),
-	keywords: faker.lorem.sentense().split(' ').jon(', '),
+	keywords: faker.lorem.sentences().split(' ').join(', '),
 	description: faker.lorem.lines(),
 	cache_control: 2,
 	language: 1,
@@ -207,7 +208,7 @@ seed.contato.default = {
 	email: faker.internet.email(),
 	telefone: faker.phone.phoneNumber(),
 	celular: faker.phone.phoneNumber(),
-	assunto: faker.lorem.sentense(),
+	assunto: faker.lorem.sentences(),
 	mensagem: faker.lorem.text(),
 };
 faker.seed(421);
@@ -217,7 +218,7 @@ seed.contato.create = {
 	email: faker.internet.email(),
 	telefone: faker.phone.phoneNumber(),
 	celular: faker.phone.phoneNumber(),
-	assunto: faker.lorem.sentense(),
+	assunto: faker.lorem.sentences(),
 	mensagem: faker.lorem.text(),
 };
 faker.seed(423);
@@ -227,7 +228,7 @@ seed.contato.update = {
 	email: faker.internet.email(),
 	telefone: faker.phone.phoneNumber(),
 	celular: faker.phone.phoneNumber(),
-	assunto: faker.lorem.sentense(),
+	assunto: faker.lorem.sentences(),
 	mensagem: faker.lorem.text(),
 };
 
@@ -276,15 +277,15 @@ seed.conteudo = {};
 seed.conteudo.default = {
 	id: 1,
 	titulo: faker.lorem.word(),
-	subtitulo: faker.lorem.sentense(),
+	subtitulo: faker.lorem.sentences(),
 	conteudo: faker.lorem.text(),
 	menu_id: 1,
 };
 faker.seed(123555);
-seed.conteudo.create = {
+seed.conteudo.create = {                          
 	id: 2,
 	titulo: faker.lorem.word(),
-	subtitulo: faker.lorem.sentense(),
+	subtitulo: faker.lorem.sentences(),
 	conteudo: faker.lorem.text(),
 	menu_id: 1,
 };
@@ -292,7 +293,7 @@ faker.seed(132355);
 seed.conteudo.update = {
 	id: 1,
 	titulo: faker.lorem.word(),
-	subtitulo: faker.lorem.sentense(),
+	subtitulo: faker.lorem.sentences(),
 	conteudo: faker.lorem.text(),
 	menu_id: 1,
 };
@@ -328,7 +329,7 @@ seed.imagem.default = {
 	imagem: faker.image.image(),
 	situacao: 1,
 	ordem: 1,
-	legenda: faker.lorem.sentense(),
+	legenda: faker.lorem.sentences(),
 };
 faker.seed(12355511);
 seed.imagem.create = {
@@ -337,7 +338,7 @@ seed.imagem.create = {
 	imagem: faker.image.image(),
 	situacao: 1,
 	ordem: 11,
-	legenda: faker.lorem.sentense(),
+	legenda: faker.lorem.sentences(),
 };
 faker.seed(13235252);
 seed.imagem.update = {
@@ -346,7 +347,7 @@ seed.imagem.update = {
 	imagem: faker.image.image(),
 	situacao: 2,
 	ordem: 15,
-	legenda: faker.lorem.sentense(),
+	legenda: faker.lorem.sentences(),
 };
 
 

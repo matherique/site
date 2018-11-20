@@ -1,7 +1,6 @@
 import passport from 'passport';
 import { Strategy, ExtractJwt } from 'passport-jwt';
 
-
 export default (app) => {
 	const Admin = app.datasource.models.ADMIN;
 	const opts = {};

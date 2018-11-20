@@ -1,3 +1,3 @@
 # Site 
 
-![Alt text](/database.jpeg)
+[Alt text](/database.jpeg)

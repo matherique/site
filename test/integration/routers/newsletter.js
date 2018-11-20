@@ -1,11 +1,11 @@
+import seed from '../../seed';
+
+const { newsletter } = seed;
+
 describe('Routers: newsletter', () => {
 	const table = '\'newsletter\'';
 	const { Newsletter } = app.datasource.models;
-	const defaultNewsletter = {
-		id: 1,
-		nome: 'nome teste',
-		email: 'emailteste@email.com'
-	};
+	const defaultNewsletter = newsletter.default;
 
 	beforeEach((done) => {
 		Newsletter
@@ -40,11 +40,7 @@ describe('Routers: newsletter', () => {
 
 	describe('POST /newsletter', () => {
 		it(`should create a ${table}`, (done) => {
-			const newsNewsletter = {
-				id: 2,
-				nome: 'nome teste2',
-				email: 'emailteste2@email.com'
-			};
+			const newsNewsletter = newsletter.create;
 
 			request
 				.post('/newsletter')
@@ -59,10 +55,8 @@ describe('Routers: newsletter', () => {
 
 	describe('PUT /newsletter/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
-			const updatedUsuario = {
-				nome: 'nome teste2',
-				email: 'emailteste2@email.com'
-			};
+			const updatedUsuario = newsletter.update;
+
 			request
 				.put('/newsletter/1')
 				.send(updatedUsuario)
