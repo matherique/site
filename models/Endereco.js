@@ -1,5 +1,5 @@
 export default (sequelize, DataTypes) => {
-	const InfoSite = sequelize.define('endereco', {
+	const Endereco = sequelize.define('endereco', {
 		id: {
 			type: DataTypes.INTEGER(11),
 			primaryKey: true,
@@ -43,5 +43,5 @@ export default (sequelize, DataTypes) => {
 		},
 	});
 
-	return InfoSite;
+	return Endereco;
 };

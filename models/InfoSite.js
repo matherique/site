@@ -33,8 +33,7 @@ export default (sequelize, DataTypes) => {
 			type: DataTypes.BOOLEAN,
 			allowNull: false,
 		},
+  });
+  return InfoSite;
 
-	});
-
-	return InfoSite;
-};
+}

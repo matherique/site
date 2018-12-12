@@ -6,7 +6,7 @@ describe('Contract: usuario', () => {
 	const table = '\'usuario\'';
 	const { Usuario } = app.datasource.models;
 	const defaultUsuario = usuario.default;
-
+  
 	beforeEach((done) => {
 		Usuario
 			.destroy({ where: {} })
@@ -24,7 +24,8 @@ describe('Contract: usuario', () => {
 				email: Joi.string(),
 				nivel: Joi.number(),
 			}));
-
+      
+        
 			request
 				.get('/usuario')
 				.end((err, res) => {

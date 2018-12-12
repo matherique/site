@@ -1,0 +1,310 @@
+{
+    "usuario":{
+        "default":{
+            "id":1,
+            "nome":"Sirineu Albuquerque",
+            "usuario":"Fabrício_Saraiva",
+            "senha":"KqmTUFcEAc1GCxA",
+            "email":"Yuri.Batista@live.com",
+            "nivel":2
+        },
+        "create":{
+            "id":2,
+            "nome":"Bruna Carvalho",
+            "usuario":"Talita.Martins",
+            "senha":"GWUpJkcbschkOtn",
+            "email":"Karla83@gmail.com",
+            "nivel":2
+        },
+        "update":{
+            "id":1,
+            "nome":"Fabiano Batista",
+            "usuario":"Fabrício_Melo",
+            "senha":"eOIkHbXNFGAfJ8c",
+            "email":"Mrcia.Saraiva@yahoo.com",
+            "nivel":2
+        }
+    },
+    "endereco":{
+        "default":{
+            "id":1,
+            "logradouro":"Souza Ponte",
+            "numero":53155,
+            "bairro":"Rio Grande do Norte",
+            "complemento":"Suite 462",
+            "cep":"47763-743",
+            "cidade":1,
+            "uf":11,
+            "googlemaps":"https://maps.google.com.br/",
+            "ordem":2,
+            "info_site":1
+        },
+        "create":{
+            "id":2,
+            "logradouro":"Silva Alameda",
+            "numero":59453,
+            "bairro":"Ceará",
+            "complemento":"Suite 795",
+            "cep":"03447",
+            "cidade":2,
+            "uf":10,
+            "googlemaps":"https://maps.google.com.br",
+            "ordem":2,
+            "info_site":1
+        },
+        "update":{
+            "id":1,
+            "logradouro":"Carvalho Ponte",
+            "numero":94372,
+            "bairro":"Amapá",
+            "complemento":"Suite 134",
+            "cep":"76263-250",
+            "cidade":2,
+            "uf":10,
+            "googlemaps":"https://maps.google.com.br",
+            "ordem":2,
+            "info_site":1
+        }
+    },
+    "info_site":{
+        "default":{
+            "id":1,
+            "hora_abre":2,
+            "hora_ini_almoco":3,
+            "hora_fim_almoco":3,
+            "hora_fecha":3,
+            "hora_abre_fds":3,
+            "email":"Slvia93@bol.com.br",
+            "dia_funcional":3
+        },
+        "create":{
+            "id":2,
+            "hora_abre":2,
+            "hora_ini_almoco":3,
+            "hora_fim_almoco":4,
+            "hora_fecha":3,
+            "hora_abre_fds":3,
+            "email":"Nbia_Silva@gmail.com",
+            "dia_funcional":3
+        },
+        "update":{
+            "hora_abre":4,
+            "id":1,
+            "hora_ini_almoco":1,
+            "hora_fim_almoco":2,
+            "hora_fecha":4,
+            "hora_abre_fds":1,
+            "email":"Yago19@yahoo.com",
+            "dia_funcional":1
+        }
+    },
+    "config":{
+        "default":{
+            "id":1,
+            "title":"sed ab molestias",
+            "keywords":"Et, atque, et, et, culpa, quo, voluptate, excepturi, non., Qui, in, sit, animi, vitae, nulla, totam., Voluptas, dignissimos, qui, nisi, aliquid, molestiae, soluta, facilis., Pariatur, eos, harum, inventore, enim, nulla, ut, rem, saepe, iste., Culpa, natus, modi, quod, corporis, accusamus, asperiores, sapiente, deserunt, at., Eos, nam, voluptatibus, architecto, quo, rerum, sapiente, hic.",
+            "description":"Nihil cumque a doloribus.\nLabore nobis ab vel delectus pariatur qui vel.\nDoloribus quis non rerum sed voluptas et voluptatum et voluptatem.\nQuas ut nobis ut iusto.",
+            "cache_control":2,
+            "language":1,
+            "robots":2,
+            "rodape":"ex ut et",
+            "info_site":1
+        },
+        "create":{
+            "id":2,
+            "title":"dolor aut rerum",
+            "keywords":"Veniam, qui, ea, deleniti, aliquam, sint., Quibusdam, rerum, voluptate, non, temporibus, vel., Voluptatem, provident, repudiandae, est, eius, molestiae, voluptates, ducimus, molestiae, animi., Ea, et, aut, ut, quisquam, quaerat, et, sit, et., Error, doloribus, odio, a, sit, suscipit, sed.",
+            "description":"Dolore aut iusto exercitationem aut maiores fugit quis aut.\nEum consequatur eveniet voluptatem dolores veniam id perspiciatis accusantium nihil.\nId et quo pariatur in facere laboriosam.\nAut dolores corrupti quis adipisci excepturi eligendi magni temporibus non.\nAliquam id natus sequi occaecati incidunt et sapiente sint totam.",
+            "cache_control":3,
+            "language":1,
+            "robots":1,
+            "rodape":"fugiat sapiente et",
+            "info_site":1
+        },
+        "update":{
+            "id":1,
+            "title":"repudiandae rerum maiores",
+            "keywords":"Dicta, enim, itaque, sit, incidunt, quidem, totam, reprehenderit, maxime, sed., Laudantium, voluptatibus, magnam, nobis, quasi, fugiat., Sit, laudantium, doloribus, in, optio, natus, quam, occaecati, doloremque., Sunt, sequi, illo., Est, qui, quas, dolorem, vitae, et, assumenda., Quo, debitis, dicta, eum, temporibus, tenetur, veritatis, odio.",
+            "description":"Non ducimus hic dolorum possimus ut voluptates vel error.\nAtque praesentium officiis repudiandae est qui similique quidem reprehenderit consequatur.\nVel dicta laboriosam voluptatem ducimus officia odit commodi et et.",
+            "cache_control":2,
+            "language":1,
+            "robots":2,
+            "rodape":"sequi atque eum",
+            "info_site":1
+        }
+    },
+    "newsletter":{
+        "default":{
+            "id":1,
+            "nome":"Marcos Silva",
+            "email":"Alexandre_Saraiva@bol.com.br"
+        },
+        "create":{
+            "id":2,
+            "nome":"Ígor Macedo",
+            "email":"Paulo48@gmail.com"
+        },
+        "update":{
+            "id":1,
+            "nome":"Suélen Moraes",
+            "email":"Yango_Costa@yahoo.com"
+        }
+    },
+    "telefone":{
+        "default":{
+            "id":1,
+            "numero":"+55 (75) 6396-4617",
+            "operadora":2,
+            "whats_sim":3,
+            "ordem":93161,
+            "endereco_id":1
+        },
+        "create":{
+            "id":2,
+            "numero":"(28) 5688-7565",
+            "operadora":2,
+            "whats_sim":3,
+            "ordem":73908,
+            "endereco_id":1
+        },
+        "update":{
+            "numero":"+55 (57) 5908-6542",
+            "operadora":2,
+            "whats_sim":3,
+            "ordem":33783,
+            "endereco_id":1
+        }
+    },
+    "contato":{
+        "default":{
+            "id":1,
+            "nome":"Carlos Melo",
+            "email":"Breno_Oliveira30@yahoo.com",
+            "telefone":"+55 (87) 5782-4860",
+            "celular":"(75) 4099-0031",
+            "assunto":"Laborum et harum repellendus dolores. Sed inventore non sequi.",
+            "mensagem":"Voluptatibus iste consectetur aut dolor. Adipisci reprehenderit consequatur nisi molestiae. Pariatur deserunt iste enim mollitia voluptatem ipsa omnis quia. Doloribus amet voluptas praesentium fugiat similique in itaque nobis odio. Quis sed sunt sed reprehenderit quaerat tenetur. Laboriosam qui laudantium vero delectus repellat consequuntur nihil minus.\n \rEaque aut est et porro natus. Rerum veritatis quo rerum. Ullam sit aliquam aliquid illo ducimus voluptate minus. Doloremque id sit suscipit et.\n \rIllum explicabo ratione quibusdam porro quas est rerum rerum. Dolor vero ut sunt voluptas pariatur tempore possimus iusto. Tenetur facilis distinctio cumque sed veritatis. Ut velit est consequatur temporibus expedita et."
+        },
+        "create":{
+            "id":2,
+            "nome":"Roberta Moraes",
+            "email":"Felcia20@gmail.com",
+            "telefone":"+55 (14) 3972-4315",
+            "celular":"(87) 7849-2632",
+            "assunto":"Consequatur culpa at nesciunt est molestiae enim sunt repudiandae. Dicta in consequatur at rerum quisquam.",
+            "mensagem":"Dignissimos ullam numquam voluptatem culpa quae ut quo numquam."
+        },
+        "update":{
+            "id":1,
+            "nome":"Larissa Carvalho",
+            "email":"Tertuliano_Moraes@bol.com.br",
+            "telefone":"+55 (91) 6844-2558",
+            "celular":"+55 (88) 7860-1514",
+            "assunto":"Quo quam sint consequuntur odio animi culpa in ut sunt. Nihil ratione ea odit vel earum voluptatem eum deserunt. Laborum pariatur occaecati alias quae ut ducimus. Maxime atque omnis. Repellat et provident.",
+            "mensagem":"Natus optio vero quia et amet consequatur quaerat. Voluptatem voluptas praesentium qui quia maxime. Aliquid delectus rerum."
+        }
+    },
+    "rede_social":{
+        "default":{
+            "id":1,
+            "url":"https://júlio césar.net",
+            "icone":2
+        },
+        "create":{
+            "id":2,
+            "url":"http://guilherme.name",
+            "icone":2
+        },
+        "update":{
+            "id":1,
+            "url":"http://víctor.org",
+            "icone":2
+        }
+    },
+    "menu":{
+        "default":{
+            "id":1,
+            "nome_menu":"et",
+            "situacao":1
+        },
+        "create":{
+            "id":2,
+            "nome_menu":"molestias",
+            "situacao":1
+        },
+        "update":{
+            "id":1,
+            "nome_menu":"ea",
+            "situacao":1
+        }
+    },
+    "conteudo":{
+        "default":{
+            "id":1,
+            "titulo":"saepe",
+            "subtitulo":"Beatae illo totam consequuntur. Blanditiis quo labore minus ullam temporibus commodi.",
+            "conteudo":"eum optio quia",
+            "menu_id":1
+        },
+        "create":{
+            "id":2,
+            "titulo":"rerum",
+            "subtitulo":"Dolores quisquam porro. Sint aut repudiandae in. Odit natus ut rerum. Illo corporis rerum. Quia vitae occaecati eveniet voluptatum atque exercitationem sunt magnam optio.",
+            "conteudo":"expedita",
+            "menu_id":1
+        },
+        "update":{
+            "id":1,
+            "titulo":"omnis",
+            "subtitulo":"Consequatur ipsa commodi minus ea sint animi eum. Aut commodi optio ipsum cum quaerat voluptas molestiae eius. Architecto est dolores rem amet sint. Et aut autem earum mollitia delectus accusantium itaque deleniti. Dolores est saepe vel.",
+            "conteudo":"Quaerat voluptatem dolore quia accusantium repellendus voluptas ea assumenda soluta.\nNesciunt consequatur ratione veniam illum sit.\nAnimi nemo in similique eaque.\nVoluptatibus illo dolorem nulla.\nAt minima consequuntur et rerum rerum reprehenderit quis et.",
+            "menu_id":1
+        }
+    },
+    "galeria":{
+        "default":{
+            "id":1,
+            "nome":"nihil",
+            "ordem":1,
+            "conteudo_id":1
+        },
+        "create":{
+            "id":2,
+            "nome":"omnis",
+            "ordem":2,
+            "conteudo_id":1
+        },
+        "update":{
+            "id":1,
+            "nome":"repellat",
+            "ordem":1,
+            "conteudo_id":1
+        }
+    },
+    "imagem":{
+        "default":{
+            "id":1,
+            "galeria_id":1,
+            "imagem":"http://lorempixel.com/640/480/cats",
+            "situacao":1,
+            "ordem":1,
+            "legenda":"Placeat iste suscipit et. Iure quia velit."
+        },
+        "create":{
+            "id":2,
+            "galeria_id":1,
+            "imagem":"http://lorempixel.com/640/480/abstract",
+            "situacao":1,
+            "ordem":11,
+            "legenda":"Quam quia et nihil. Beatae qui provident possimus repellendus vel rerum."
+        },
+        "update":{
+            "id":1,
+            "galeria_id":1,
+            "imagem":"http://lorempixel.com/640/480/technics",
+            "situacao":2,
+            "ordem":15,
+            "legenda":"Omnis praesentium iste. Earum est quod debitis rerum. Repellat et aliquam. Et consequuntur atque. Veritatis porro fugit qui."
+        }
+    }
+}

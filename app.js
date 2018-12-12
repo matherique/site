@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import config from './config/config';
 import datasource from './config/datasource';
-// import authorization from './auth';
 import Usuario from './routes/usuario';
 import RedeSocial from './routes/rede_social';
 import Newsletter from './routes/newsletter';
@@ -20,7 +19,7 @@ app.use(bodyParser.json());
 // app.use(auth.initialize());
 // app.auth = auth;
 
-const usuario = Usuario(app)
+const usuario = Usuario(app);
 const redesocial = RedeSocial(app);
 const newsletter = Newsletter(app);
 const infosite = InfoSite(app);
