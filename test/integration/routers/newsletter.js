@@ -59,7 +59,7 @@ describe('Routers: newsletter', () => {
 
 			request
 				.put('/newsletter/1')
-				.send(updatedUsuario
+				.send(updatedUsuario)
 				.end((err, res) => {
 					expect(res.body).to.be.eql([1]);
 					done(err);

@@ -1,6 +1,6 @@
 {
     "usuario":{
-        "default":{
+        "std":{
             "id":1,
             "nome":"Sirineu Albuquerque",
             "usuario":"Fabrício_Saraiva",
@@ -26,13 +26,13 @@
         }
     },
     "endereco":{
-        "default":{
+        "std":{
             "id":1,
             "logradouro":"Souza Ponte",
             "numero":53155,
             "bairro":"Rio Grande do Norte",
             "complemento":"Suite 462",
-            "cep":"47763-743",
+            "CEP":"47763-743",
             "cidade":1,
             "uf":11,
             "googlemaps":"https://maps.google.com.br/",
@@ -45,7 +45,7 @@
             "numero":59453,
             "bairro":"Ceará",
             "complemento":"Suite 795",
-            "cep":"03447",
+            "CEP":"03447",
             "cidade":2,
             "uf":10,
             "googlemaps":"https://maps.google.com.br",
@@ -58,7 +58,7 @@
             "numero":94372,
             "bairro":"Amapá",
             "complemento":"Suite 134",
-            "cep":"76263-250",
+            "CEP":"76263-250",
             "cidade":2,
             "uf":10,
             "googlemaps":"https://maps.google.com.br",
@@ -67,7 +67,7 @@
         }
     },
     "info_site":{
-        "default":{
+        "std":{
             "id":1,
             "hora_abre":2,
             "hora_ini_almoco":3,
@@ -88,8 +88,8 @@
             "dia_funcional":3
         },
         "update":{
-            "hora_abre":4,
             "id":1,
+            "hora_abre":4,
             "hora_ini_almoco":1,
             "hora_fim_almoco":2,
             "hora_fecha":4,
@@ -99,27 +99,27 @@
         }
     },
     "config":{
-        "default":{
+        "std":{
             "id":1,
             "title":"sed ab molestias",
-            "keywords":"Et, atque, et, et, culpa, quo, voluptate, excepturi, non., Qui, in, sit, animi, vitae, nulla, totam., Voluptas, dignissimos, qui, nisi, aliquid, molestiae, soluta, facilis., Pariatur, eos, harum, inventore, enim, nulla, ut, rem, saepe, iste., Culpa, natus, modi, quod, corporis, accusamus, asperiores, sapiente, deserunt, at., Eos, nam, voluptatibus, architecto, quo, rerum, sapiente, hic.",
+            "keywords":"Et, atque, et, et, culpa, quo, voluptate, exCEPturi, non., Qui, in, sit, animi, vitae, nulla, totam., Voluptas, dignissimos, qui, nisi, aliquid, molestiae, soluta, facilis., Pariatur, eos, harum, inventore, enim, nulla, ut, rem, saepe, iste., Culpa, natus, modi, quod, corporis, accusamus, asperiores, sapiente, deserunt, at., Eos, nam, voluptatibus, architecto, quo, rerum, sapiente, hic.",
             "description":"Nihil cumque a doloribus.\nLabore nobis ab vel delectus pariatur qui vel.\nDoloribus quis non rerum sed voluptas et voluptatum et voluptatem.\nQuas ut nobis ut iusto.",
             "cache_control":2,
-            "language":1,
+            "language":2,
             "robots":2,
-            "rodape":"ex ut et",
-            "info_site":1
+            "rodape":"ex ut et"
+
         },
         "create":{
             "id":2,
             "title":"dolor aut rerum",
             "keywords":"Veniam, qui, ea, deleniti, aliquam, sint., Quibusdam, rerum, voluptate, non, temporibus, vel., Voluptatem, provident, repudiandae, est, eius, molestiae, voluptates, ducimus, molestiae, animi., Ea, et, aut, ut, quisquam, quaerat, et, sit, et., Error, doloribus, odio, a, sit, suscipit, sed.",
-            "description":"Dolore aut iusto exercitationem aut maiores fugit quis aut.\nEum consequatur eveniet voluptatem dolores veniam id perspiciatis accusantium nihil.\nId et quo pariatur in facere laboriosam.\nAut dolores corrupti quis adipisci excepturi eligendi magni temporibus non.\nAliquam id natus sequi occaecati incidunt et sapiente sint totam.",
+            "description":"Dolore aut iusto exercitationem aut maiores fugit quis aut.\nEum consequatur eveniet voluptatem dolores veniam id perspiciatis accusantium nihil.\nId et quo pariatur in facere laboriosam.\nAut dolores corrupti quis adipisci exCEPturi eligendi magni temporibus non.\nAliquam id natus sequi occaecati incidunt et sapiente sint totam.",
             "cache_control":3,
-            "language":1,
+            "language":2,
             "robots":1,
-            "rodape":"fugiat sapiente et",
-            "info_site":1
+            "rodape":"fugiat sapiente et"
+
         },
         "update":{
             "id":1,
@@ -127,14 +127,14 @@
             "keywords":"Dicta, enim, itaque, sit, incidunt, quidem, totam, reprehenderit, maxime, sed., Laudantium, voluptatibus, magnam, nobis, quasi, fugiat., Sit, laudantium, doloribus, in, optio, natus, quam, occaecati, doloremque., Sunt, sequi, illo., Est, qui, quas, dolorem, vitae, et, assumenda., Quo, debitis, dicta, eum, temporibus, tenetur, veritatis, odio.",
             "description":"Non ducimus hic dolorum possimus ut voluptates vel error.\nAtque praesentium officiis repudiandae est qui similique quidem reprehenderit consequatur.\nVel dicta laboriosam voluptatem ducimus officia odit commodi et et.",
             "cache_control":2,
-            "language":1,
+            "language":2,
             "robots":2,
-            "rodape":"sequi atque eum",
-            "info_site":1
+            "rodape":"sequi atque eum"
+
         }
     },
     "newsletter":{
-        "default":{
+        "std":{
             "id":1,
             "nome":"Marcos Silva",
             "email":"Alexandre_Saraiva@bol.com.br"
@@ -151,9 +151,9 @@
         }
     },
     "telefone":{
-        "default":{
+        "std":{
             "id":1,
-            "numero":"+55 (75) 6396-4617",
+            "numero":"(75)6396-4617",
             "operadora":2,
             "whats_sim":3,
             "ordem":93161,
@@ -161,14 +161,14 @@
         },
         "create":{
             "id":2,
-            "numero":"(28) 5688-7565",
+            "numero":"(28)5688-7565",
             "operadora":2,
             "whats_sim":3,
             "ordem":73908,
             "endereco_id":1
         },
         "update":{
-            "numero":"+55 (57) 5908-6542",
+            "numero":"(57)5908-6542",
             "operadora":2,
             "whats_sim":3,
             "ordem":33783,
@@ -176,7 +176,7 @@
         }
     },
     "contato":{
-        "default":{
+        "std":{
             "id":1,
             "nome":"Carlos Melo",
             "email":"Breno_Oliveira30@yahoo.com",
@@ -205,7 +205,7 @@
         }
     },
     "rede_social":{
-        "default":{
+        "std":{
             "id":1,
             "url":"https://júlio césar.net",
             "icone":2
@@ -222,7 +222,7 @@
         }
     },
     "menu":{
-        "default":{
+        "std":{
             "id":1,
             "nome_menu":"et",
             "situacao":1
@@ -239,7 +239,7 @@
         }
     },
     "conteudo":{
-        "default":{
+        "std":{
             "id":1,
             "titulo":"saepe",
             "subtitulo":"Beatae illo totam consequuntur. Blanditiis quo labore minus ullam temporibus commodi.",
@@ -262,7 +262,7 @@
         }
     },
     "galeria":{
-        "default":{
+        "std":{
             "id":1,
             "nome":"nihil",
             "ordem":1,
@@ -282,7 +282,7 @@
         }
     },
     "imagem":{
-        "default":{
+        "std":{
             "id":1,
             "galeria_id":1,
             "imagem":"http://lorempixel.com/640/480/cats",
