@@ -6,7 +6,7 @@ const errorResponse = (message, statusCode = httpsStatus.BAD_REQUEST) => {
 };
 
 export default class ConfigController {
-	constructor(config) {
+	constructor(config) {      
 		this.Config = config;
 	}
 
@@ -23,8 +23,9 @@ export default class ConfigController {
 	}
 
 	create(data) {
+      console.log(this.Config)
 		return this.Config.create(data)
-			.then(result => defaultResponse(result, httpsStatus.CREATED))
+         .then(result => defaultResponse(result, httpsStatus.CREATED))
 			.catch(error => errorResponse(error.message, httpsStatus.UNPROCESSABLE_ENTITY));
 	}
 

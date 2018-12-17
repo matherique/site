@@ -40,12 +40,21 @@ describe('Routers: config', () => {
 
 	describe('POST /config', () => {
 		it(`should create a ${table}`, (done) => {
+         const createData = {
+            id : 1, 
+            title: 'titulo teste', 
+            keywords: 'palavra1 , palavra2, palavra3',
+            description: 'descricao teste bla bla bla',
+            cache_control: 2, 
+            language: 2,
+            robots: 2,
+            rodape: 'rodape teste',
+         }
 		   request
 				.post('/config')
-				.send(create)
+				.send(createData)
 				.set('Accept', 'application/json')
 				.end((err, res) => {
-               console.log(res.body, create);
 					expect(res.body).to.be.eql(create);
 					done(err);
 				});

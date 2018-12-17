@@ -16,10 +16,12 @@ import Galeria from './routes/galeria';
 import Imagem from './routes/imagem';
 import Menu from './routes/menu';
 import Telefone from './routes/telefone';
+// routes 
 
-
+// App Express
 const app = express();
 
+// Configs and middleware
 app.config = config;
 app.datasource = datasource(app);
 app.set('port', 5000);
@@ -42,6 +44,7 @@ const imagem = Imagem(app);
 const menu = Menu(app);
 const telefone = Telefone(app);
 
+//routes
 app.use('/usuario', usuario);
 app.use('/rede-social', redesocial);
 app.use('/newsletter', newsletter);
@@ -54,6 +57,5 @@ app.use('/galeria', galeria);
 app.use('/imagem', imagem);
 app.use('/menu', menu);
 app.use('/telefone', telefone);
-
-
+// routes
 export default app;
