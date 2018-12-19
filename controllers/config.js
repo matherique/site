@@ -23,9 +23,8 @@ export default class ConfigController {
 	}
 
 	create(data) {
-      console.log(this.Config)
 		return this.Config.create(data)
-         .then(result => defaultResponse(result, httpsStatus.CREATED))
+			.then(result => defaultResponse(result, httpsStatus.CREATED))
 			.catch(error => errorResponse(error.message, httpsStatus.UNPROCESSABLE_ENTITY));
 	}
 

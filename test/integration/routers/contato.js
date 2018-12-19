@@ -1,23 +1,23 @@
 import seed from '../../seed';
 
-const { info_site } = seed;
+const { contato } = seed;
 
-describe('Routers: Infos Site', () => {
-	const table = '\'info_site\'';
-	const { Info_site } = app.datasource.models;
-   const { create, std, update } = info_site;
+describe('Routers: Contato', () => {
+	const table = '\'contato\'';
+	const { Contato } = app.datasource.models;
+   const { create, std, update } = contato;
 
 	beforeEach((done) => {
-		Info_site
+		Contato
 			.destroy({ where: {} })
-			.then(() => Info_site.create(std))
+			.then(() => Contato.create(std))
 			.then(() => done());
 	});
 
-	describe('GET /info-site', () => {
+	describe('GET /contato', () => {
 		it(`should return a list of ${table}`, (done) => {
 			request
-				.get('/info-site')
+				.get('/contato')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
 					expect(res.body[0]).to.be.eql(std);
@@ -26,10 +26,10 @@ describe('Routers: Infos Site', () => {
 		});
 	});
 
-	describe('GET /info-site/{id}', () => {
+	describe('GET /contato/{id}', () => {
 		it(`should return a ${table} by id`, (done) => {
 			request
-				.get('/info-site/1')
+				.get('/contato/1')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
 					expect(res.body).to.be.eql(std);
@@ -38,10 +38,10 @@ describe('Routers: Infos Site', () => {
 		});
 	});
 
-	describe('POST /info-site', () => {
+	describe('POST /contato', () => {
 		it(`should create a ${table}`, (done) => {
-            request
-				.post('/info-site')
+         request
+				.post('/contato')
 				.send(create)
 				.set('Accept', 'application/json')
 				.end((err, res) => {
@@ -51,10 +51,10 @@ describe('Routers: Infos Site', () => {
 		});
 	});
 
-	describe('PUT /info-site/{id}', () => {
+	describe('PUT /contato/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
 			request
-				.put('/info-site/1')
+				.put('/contato/1')
 				.send(update)
 				.end((err, res) => {
 					expect(res.body).to.be.eql([1]);
@@ -63,10 +63,10 @@ describe('Routers: Infos Site', () => {
 		});
 	});
 
-	describe('DELETE /info-site/{id}', () => {
+	describe('DELETE /contato/{id}', () => {
 		it(`should delete a ${table} by id`, (done) => {
 			request
-				.delete('/info-site/1')
+				.delete('/contato/1')
 				.end((err, res) => {
 					expect(res.statusCode).to.be.eql(204);
 					done(err);

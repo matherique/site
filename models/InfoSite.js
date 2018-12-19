@@ -6,23 +6,23 @@ export default (sequelize, DataTypes) => {
 			autoIncrement: true,
 		},
 		hora_abre: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.INTEGER(5),
 			allowNull: false,
 		},
 		hora_ini_almoco: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.INTEGER(5),
 			allowNull: false,
 		},
 		hora_fim_almoco: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.INTEGER(5),
 			allowNull: true,
 		},
 		hora_fecha: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.INTEGER(5),
 			allowNull: false,
 		},
 		hora_abre_fds: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.INTEGER(5),
 			allowNull: false,
 		},
 		email: {
@@ -30,7 +30,7 @@ export default (sequelize, DataTypes) => {
 			allowNull: false,
 		},
 		dia_funcional: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.INTEGER(5),
 			allowNull: false,
 		},
   });

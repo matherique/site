@@ -1,4 +1,4 @@
-{
+   {
     "usuario":{
         "std":{
             "id":1,
@@ -29,41 +29,41 @@
         "std":{
             "id":1,
             "logradouro":"Souza Ponte",
-            "numero":53155,
+            "numero":"53155",
             "bairro":"Rio Grande do Norte",
             "complemento":"Suite 462",
             "CEP":"47763-743",
             "cidade":1,
-            "uf":11,
+            "UF":11,
             "googlemaps":"https://maps.google.com.br/",
-            "ordem":2,
-            "info_site":1
+            "ordem":2
+
         },
         "create":{
             "id":2,
             "logradouro":"Silva Alameda",
-            "numero":59453,
+            "numero":"59453",
             "bairro":"Ceará",
             "complemento":"Suite 795",
             "CEP":"03447",
             "cidade":2,
-            "uf":10,
+            "UF":10,
             "googlemaps":"https://maps.google.com.br",
-            "ordem":2,
-            "info_site":1
+            "ordem":2
+            
         },
         "update":{
             "id":1,
             "logradouro":"Carvalho Ponte",
-            "numero":94372,
+            "numero":"94372",
             "bairro":"Amapá",
             "complemento":"Suite 134",
             "CEP":"76263-250",
             "cidade":2,
-            "uf":10,
+            "UF":10,
             "googlemaps":"https://maps.google.com.br",
-            "ordem":2,
-            "info_site":1
+            "ordem":2
+
         }
     },
     "info_site":{
@@ -156,23 +156,22 @@
             "numero":"(75)6396-4617",
             "operadora":2,
             "whats_sim":3,
-            "ordem":93161,
-            "endereco_id":1
+            "ordem":93161
+     
         },
         "create":{
             "id":2,
             "numero":"(28)5688-7565",
             "operadora":2,
             "whats_sim":3,
-            "ordem":73908,
-            "endereco_id":1
+            "ordem":73908
+
         },
         "update":{
             "numero":"(57)5908-6542",
             "operadora":2,
             "whats_sim":3,
-            "ordem":33783,
-            "endereco_id":1
+            "ordem":33783
         }
     },
     "contato":{
@@ -180,27 +179,27 @@
             "id":1,
             "nome":"Carlos Melo",
             "email":"Breno_Oliveira30@yahoo.com",
-            "telefone":"+55 (87) 5782-4860",
+            "telefone":"(87) 5782-4860",
             "celular":"(75) 4099-0031",
-            "assunto":"Laborum et harum repellendus dolores. Sed inventore non sequi.",
+            "assunto":"Laborum et harum repellendus.",
             "mensagem":"Voluptatibus iste consectetur aut dolor. Adipisci reprehenderit consequatur nisi molestiae. Pariatur deserunt iste enim mollitia voluptatem ipsa omnis quia. Doloribus amet voluptas praesentium fugiat similique in itaque nobis odio. Quis sed sunt sed reprehenderit quaerat tenetur. Laboriosam qui laudantium vero delectus repellat consequuntur nihil minus.\n \rEaque aut est et porro natus. Rerum veritatis quo rerum. Ullam sit aliquam aliquid illo ducimus voluptate minus. Doloremque id sit suscipit et.\n \rIllum explicabo ratione quibusdam porro quas est rerum rerum. Dolor vero ut sunt voluptas pariatur tempore possimus iusto. Tenetur facilis distinctio cumque sed veritatis. Ut velit est consequatur temporibus expedita et."
         },
         "create":{
             "id":2,
             "nome":"Roberta Moraes",
             "email":"Felcia20@gmail.com",
-            "telefone":"+55 (14) 3972-4315",
+            "telefone":"(14) 3972-4315",
             "celular":"(87) 7849-2632",
-            "assunto":"Consequatur culpa at nesciunt est molestiae enim sunt repudiandae. Dicta in consequatur at rerum quisquam.",
+            "assunto":"Consequatur culpa at nesciunt.",
             "mensagem":"Dignissimos ullam numquam voluptatem culpa quae ut quo numquam."
         },
         "update":{
             "id":1,
             "nome":"Larissa Carvalho",
             "email":"Tertuliano_Moraes@bol.com.br",
-            "telefone":"+55 (91) 6844-2558",
-            "celular":"+55 (88) 7860-1514",
-            "assunto":"Quo quam sint consequuntur odio animi culpa in ut sunt. Nihil ratione ea odit vel earum voluptatem eum deserunt. Laborum pariatur occaecati alias quae ut ducimus. Maxime atque omnis. Repellat et provident.",
+            "telefone":"(91) 6844-2558",
+            "celular":"(88) 7860-1514",
+            "assunto":"Quo quam sint consequuntur odio.",
             "mensagem":"Natus optio vero quia et amet consequatur quaerat. Voluptatem voluptas praesentium qui quia maxime. Aliquid delectus rerum."
         }
     },
@@ -243,22 +242,21 @@
             "id":1,
             "titulo":"saepe",
             "subtitulo":"Beatae illo totam consequuntur. Blanditiis quo labore minus ullam temporibus commodi.",
-            "conteudo":"eum optio quia",
-            "menu_id":1
+            "conteudo":"eum optio quia"
+
         },
         "create":{
             "id":2,
             "titulo":"rerum",
             "subtitulo":"Dolores quisquam porro. Sint aut repudiandae in. Odit natus ut rerum. Illo corporis rerum. Quia vitae occaecati eveniet voluptatum atque exercitationem sunt magnam optio.",
-            "conteudo":"expedita",
-            "menu_id":1
+            "conteudo":"expedita"
+
         },
         "update":{
             "id":1,
             "titulo":"omnis",
             "subtitulo":"Consequatur ipsa commodi minus ea sint animi eum. Aut commodi optio ipsum cum quaerat voluptas molestiae eius. Architecto est dolores rem amet sint. Et aut autem earum mollitia delectus accusantium itaque deleniti. Dolores est saepe vel.",
-            "conteudo":"Quaerat voluptatem dolore quia accusantium repellendus voluptas ea assumenda soluta.\nNesciunt consequatur ratione veniam illum sit.\nAnimi nemo in similique eaque.\nVoluptatibus illo dolorem nulla.\nAt minima consequuntur et rerum rerum reprehenderit quis et.",
-            "menu_id":1
+            "conteudo":"Quaerat voluptatem dolore quia accusantium repellendus voluptas ea assumenda soluta.\nNesciunt consequatur ratione veniam illum sit.\nAnimi nemo in similique eaque.\nVoluptatibus illo dolorem nulla.\nAt minima consequuntur et rerum rerum reprehenderit quis et."
         }
     },
     "galeria":{
@@ -284,27 +282,27 @@
     "imagem":{
         "std":{
             "id":1,
-            "galeria_id":1,
+
             "imagem":"http://lorempixel.com/640/480/cats",
             "situacao":1,
             "ordem":1,
-            "legenda":"Placeat iste suscipit et. Iure quia velit."
+            "legenda":"Placeat iste suscipit et."
         },
         "create":{
             "id":2,
-            "galeria_id":1,
+
             "imagem":"http://lorempixel.com/640/480/abstract",
             "situacao":1,
             "ordem":11,
-            "legenda":"Quam quia et nihil. Beatae qui provident possimus repellendus vel rerum."
+            "legenda":"Quam quia et nihil."
         },
         "update":{
             "id":1,
-            "galeria_id":1,
+
             "imagem":"http://lorempixel.com/640/480/technics",
             "situacao":2,
             "ordem":15,
-            "legenda":"Omnis praesentium iste. Earum est quod debitis rerum. Repellat et aliquam. Et consequuntur atque. Veritatis porro fugit qui."
+            "legenda":"Omnis praesentium iste."
         }
     }
 }

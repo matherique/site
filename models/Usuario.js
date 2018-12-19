@@ -24,7 +24,7 @@ export default (sequelize, DataTypes) => {
 			allowNull: true,
 		},
 		nivel: {
-			type: DataTypes.BOOLEAN(1),
+         type: DataTypes.INTEGER(5),
 			allowNull: false,
 		},
 	},

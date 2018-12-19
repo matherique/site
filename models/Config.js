@@ -18,15 +18,15 @@ export default (sequelize, DataType) => {
       allowNull: false,
     },
     cache_control: {
-      type: DataType.BOOLEAN,
+      type: DataType.INTEGER(5),
       allowNull: false,
     },
     language: {
-      type: DataType.BOOLEAN,
+      type: DataType.INTEGER(5),
       allowNull: false,
     },
     robots: {
-      type: DataType.BOOLEAN,
+      type: DataType.INTEGER(5),
       allowNull: false,
     },
     rodape: {

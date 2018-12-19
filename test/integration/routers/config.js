@@ -5,7 +5,7 @@ describe('Routers: config', () => {
 	const table = '\'config\'';
 	const { Config } = app.datasource.models;
 	const { create, update, std }  = config;
-
+   
 	beforeEach((done) => {
 		Config
 			.destroy({ where: {} })
@@ -18,8 +18,7 @@ describe('Routers: config', () => {
 			request
 				.get('/config')
 				.expect('Content-Type', /json/)
-				.end((err, res) => {
-
+            .end((err, res) => {
 					expect(res.body[0]).to.be.eql(std);
 					done(err);
 				});
@@ -40,21 +39,11 @@ describe('Routers: config', () => {
 
 	describe('POST /config', () => {
 		it(`should create a ${table}`, (done) => {
-         const createData = {
-            id : 1, 
-            title: 'titulo teste', 
-            keywords: 'palavra1 , palavra2, palavra3',
-            description: 'descricao teste bla bla bla',
-            cache_control: 2, 
-            language: 2,
-            robots: 2,
-            rodape: 'rodape teste',
-         }
 		   request
 				.post('/config')
-				.send(createData)
+				.send(create)
 				.set('Accept', 'application/json')
-				.end((err, res) => {
+				.end((err, res) => {             
 					expect(res.body).to.be.eql(create);
 					done(err);
 				});

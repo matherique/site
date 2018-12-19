@@ -5,11 +5,12 @@ const { usuario } = seed;
 describe('Routers: usuario', () => {
 	const table = '\'usuario\'';
 	const { Usuario } = app.datasource.models;
-	const defaultUsuario = usuario.default;
-	beforeEach((done) => {
+      const { create, std, update } = usuario;
+
+   beforeEach((done) => {
 		Usuario
 			.destroy({ where: {} })
-			.then(() => Usuario.create(defaultUsuario))
+			.then(() => Usuario.create(std))
 			.then(() => done());
 	});
 
@@ -19,7 +20,7 @@ describe('Routers: usuario', () => {
 				.get('/usuario')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
-					expect(res.body[0]).to.be.eql(defaultUsuario);
+					expect(res.body[0]).to.be.eql(std);
 					done(err);
 				});
 		});
@@ -31,7 +32,7 @@ describe('Routers: usuario', () => {
 				.get('/usuario/1')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
-					expect(res.body).to.be.eql(defaultUsuario);
+					expect(res.body).to.be.eql(std);
 					done(err);
 				});
 		});
@@ -39,13 +40,12 @@ describe('Routers: usuario', () => {
 
 	describe('POST /usuario', () => {
 		it(`should create a ${table}`, (done) => {
-			const newUsuario = usuario.create;
 			request
 				.post('/usuario')
-				.send(newUsuario)
+				.send(create)
 				.set('Accept', 'application/json')
 				.end((err, res) => {
-					expect(res.body).to.be.eql(newUsuario);
+					expect(res.body).to.be.eql(create);
 					done(err);
 				});
 		});
@@ -53,10 +53,9 @@ describe('Routers: usuario', () => {
 
 	describe('PUT /usuario/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
-			const updatedUsuario = usuario.update;
 			request
 				.put('/usuario/1')
-				.send(updatedUsuario)
+				.send(update)
 				.end((err, res) => {
 					expect(res.body).to.be.eql([1]);
 					done(err);

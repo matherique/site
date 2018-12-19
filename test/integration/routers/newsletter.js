@@ -5,12 +5,13 @@ const { newsletter } = seed;
 describe('Routers: newsletter', () => {
 	const table = '\'newsletter\'';
 	const { Newsletter } = app.datasource.models;
-	const defaultNewsletter = newsletter.default;
+	const { create, std, update } = newsletter 
+
 
 	beforeEach((done) => {
 		Newsletter
 			.destroy({ where: {} })
-			.then(() => Newsletter.create(defaultNewsletter))
+         .then(() => Newsletter.create(std))
 			.then(() => done());
 	});
 
@@ -20,7 +21,7 @@ describe('Routers: newsletter', () => {
 				.get('/newsletter')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
-					expect(res.body[0]).to.be.eql(defaultNewsletter);
+					expect(res.body[0]).to.be.eql(std);
 					done(err);
 				});
 		});
@@ -32,7 +33,7 @@ describe('Routers: newsletter', () => {
 				.get('/newsletter/1')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
-					expect(res.body).to.be.eql(defaultNewsletter);
+					expect(res.body).to.be.eql(std);
 					done(err);
 				});
 		});
@@ -40,14 +41,12 @@ describe('Routers: newsletter', () => {
 
 	describe('POST /newsletter', () => {
 		it(`should create a ${table}`, (done) => {
-			const newsNewsletter = newsletter.create;
-
-			request
+		   request
 				.post('/newsletter')
-				.send(newsNewsletter)
+				.send(create)
 				.set('Accept', 'application/json')
 				.end((err, res) => {
-					expect(res.body).to.be.eql(newsNewsletter);
+					expect(res.body).to.be.eql(create);
 					done(err);
 				});
 		});
@@ -55,11 +54,9 @@ describe('Routers: newsletter', () => {
 
 	describe('PUT /newsletter/{id}', () => {
 		it(`should update a ${table} by id`, (done) => {
-			const updatedUsuario = newsletter.update;
-
 			request
 				.put('/newsletter/1')
-				.send(updatedUsuario)
+            .send(update)
 				.end((err, res) => {
 					expect(res.body).to.be.eql([1]);
 					done(err);

@@ -10,7 +10,7 @@ export default (sequelize, DataType) => {
       allowNull: false,
     },
     situacao: {
-      type: DataType.BOOLEAN,
+      type: DataType.INTEGER(5),
       allowNull: false,
     },
   });

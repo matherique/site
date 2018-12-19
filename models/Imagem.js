@@ -10,11 +10,11 @@ export default (sequelize, DataType) => {
       allowNull: false,
     },
     situacao: {
-      type: DataType.BOOLEAN,
+      type: DataType.INTEGER(4),
       allowNull: false,
     },
     ordem: {
-      type: DataType.BOOLEAN,
+      type: DataType.INTEGER(4),
       allowNull: false,
     },
     legenda: {

@@ -4,8 +4,8 @@ import EnderecoController from '../controllers/endereco';
 const router = Router();
 
 export default (app) => {
-	const { endereco } = app.datasource.models;
-	const controller = new EnderecoController(endereco);
+	const { Endereco } = app.datasource.models;
+	const controller = new EnderecoController(Endereco);
 
 	router.get('/', (_, res) => {
 		controller.getAll()

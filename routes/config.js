@@ -30,15 +30,14 @@ export default (app) => {
 	});
 
 	router.post('/', (req, res) => {
-      controller.create(req.body)
-			.then((resp) => {        
-				//res.status(resp.statusCode);
-  //          res.status(200);
-//				res.json(resp.data);
+		controller.create(req.body)
+			.then((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
 			}).catch((resp) => {
-            console.log('response catch post config', resp);
-//				res.status(resp.statusCode);
-//				res.json(resp.data);
+            console.log('error', resp);
+				res.status(resp.statusCode);
+				res.json(resp.data);
 			});
 	});
 

@@ -11,8 +11,7 @@ export default {
 			underscored: true,
 			freezeTableName: true,
 		},
-
-	},
+   },
 	jwtSecret: 'huehuesession',
 	jwtSession: { session: false },
 };
