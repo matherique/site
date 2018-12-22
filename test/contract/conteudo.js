@@ -1,33 +1,30 @@
 import seed from '../seed';
 
-const { usuario } = seed;
+const { conteudo } = seed;
 
-describe('Contract: usuario', () => {
-	const table = '\'usuario\'';
-	const { Usuario } = app.datasource.models;
-	const { create, std, update } = usuario;
-  
+describe('Contract: conteudo', () => {
+	const table = '\'conteudo\'';
+   const { Conteudo } = app.datasource.models;
+   const { create, update, std } = conteudo;
+
 	beforeEach((done) => {
-		Usuario
+		Conteudo
 			.destroy({ where: {} })
-			.then(() => Usuario.create(std))
+			.then(() => Conteudo.create(std))
 			.then(() => done());
 	});
 
-	describe('GET /usuario', () => {
+	describe('GET /conteudo', () => {
 		it(`should return a list of  ${table}`, (done) => {
-			const listItens= Joi.array().items(Joi.object().keys({
+			const listItens = Joi.array().items(Joi.object().keys({
 				id: Joi.number(),
-				nome: Joi.string(),
-				usuario: Joi.string(),
-				senha: Joi.string(),
-				email: Joi.string(),
-				nivel: Joi.number(),
-			}));
-      
-        
+            titulo: Joi.string(),
+            subtitulo: Joi.string(),
+            conteudo : Joi.string(),
+         }));
+
 			request
-				.get('/usuario')
+				.get('/conteudo')
 				.end((err, res) => {
 					joiAssert(res.body, listItens);
 					done(err);
@@ -35,19 +32,18 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('GET /usuario/{id}', () => {
+	describe('GET /conteudo/{id}', () => {
 		it(`should return a ${table}`, (done) => {
 			const item = Joi.object().keys({
 				id: Joi.number(),
-				nome: Joi.string(),
-				usuario: Joi.string(),
-				senha: Joi.string(),
-				email: Joi.string(),
-				nivel: Joi.number(),
+            titulo: Joi.string(),
+            subtitulo: Joi.string(),
+            conteudo : Joi.string(),
 			});
 
 			request
-				.get('/usuario/1')
+				.get('/conteudo/1')
+				.expect('Content-Type', /json/)
 				.end((err, res) => {
 					joiAssert(res.body, item);
 					done(err);
@@ -55,19 +51,17 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('POST /usuario', () => {
+	describe('POST /conteudo', () => {
 		it(`should create a ${table}`, (done) => {
-			const item = Joi.object().keys({
-				id: Joi.number(),
-				nome: Joi.string(),
-				usuario: Joi.string(),
-				senha: Joi.string(),
-				email: Joi.string(),
-				nivel: Joi.number(),
-			});
+			const item = Joi.object().keys({ 
+            id: Joi.number(),
+            titulo: Joi.string(),
+            subtitulo: Joi.string(),
+            conteudo : Joi.string(),
+		   });
 
 			request
-				.post('/usuario')
+				.post('/conteudo')
 				.send(create)
 				.end((err, res) => {
 					joiAssert(res.body, item);
@@ -76,11 +70,11 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('PUT /usuario/{id}', () => {
+	describe('PUT /conteudo/{id}', () => {
 		it(`should update a ${table}`, (done) => {
 			const updatedCount = Joi.array().items(1);
 			request
-				.put('/usuario/1')
+				.put('/conteudo/1')
 				.send(update)
 				.end((err, res) => {
 					joiAssert(res.body, updatedCount);
@@ -89,10 +83,10 @@ describe('Contract: usuario', () => {
 		});
 	});
 
-	describe('DELETE /usuario/{id}', () => {
+	describe('DELETE /conteudo/{id}', () => {
 		it(`should deleta a ${table}`, (done) => {
 			request
-				.delete('/usuario/1')
+				.delete('/conteudo/1')
 				.end((err, res) => {
 					expect(res.statusCode).to.be.eql(204);
 					done(err);

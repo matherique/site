@@ -1,27 +1,20 @@
+import seed from '../seed.js';
+
+const { info_site } = seed;
 describe('Contract: info_site', () => {
 	const table = '\'info_site\'';
 	const { Info_site } = app.datasource.models;
-	const defaultInfoSite = {
-		id: 1,
-		hora_abre: 3,
-		hora_ini_almoco: 3,
-		hora_fim_almoco: 3,
-		hora_fecha: 3,
-		hora_abre_fds: 3,
-		email: 'emailteste2@teste.com',
-		dia_funcional: 3,
-	};
-
+	const { create, update, std } = info_site;
 	beforeEach((done) => {
 		Info_site
 			.destroy({ where: {} })
-			.then(() => Info_site.create(defaultInfoSite))
+         .then(() => Info_site.create(std))
 			.then(() => done());
 	});
 
 	describe('GET /info-site', () => {
 		it(`should return a list of  ${table}`, (done) => {
-			const newsletterList = Joi.array().items(Joi.object().keys({
+			const listItens = Joi.array().items(Joi.object().keys({
 				id: Joi.number(),
 				hora_abre: Joi.number(),
 				hora_ini_almoco: Joi.number(),
@@ -35,7 +28,7 @@ describe('Contract: info_site', () => {
 			request
 				.get('/info-site')
 				.end((err, res) => {
-					joiAssert(res.body, newsletterList);
+					joiAssert(res.body, listItens);
 					done(err);
 				});
 		});
@@ -43,7 +36,7 @@ describe('Contract: info_site', () => {
 
 	describe('GET /info-site/{id}', () => {
 		it(`should return a ${table}`, (done) => {
-			const infosite = Joi.object().keys({
+			const item = Joi.object().keys({
 				id: Joi.number(),
 				hora_abre: Joi.number(),
 				hora_ini_almoco: Joi.number(),
@@ -58,7 +51,7 @@ describe('Contract: info_site', () => {
 				.get('/info-site/1')
 				.expect('Content-Type', /json/)
 				.end((err, res) => {
-					joiAssert(res.body, infosite);
+					joiAssert(res.body, item);
 					done(err);
 				});
 		});
@@ -66,18 +59,7 @@ describe('Contract: info_site', () => {
 
 	describe('POST /info-site', () => {
 		it(`should create a ${table}`, (done) => {
-			const newNewsletter = {
-				id: 2,
-				hora_abre: 4,
-				hora_ini_almoco: 4,
-				hora_fim_almoco: 4,
-				hora_fecha: 4,
-				hora_abre_fds: 4,
-				email: 'emailteste2@teste.com',
-				dia_funcional: 4,
-			};
-
-			const newsletter = Joi.object().keys({
+			const item = Joi.object().keys({
 				id: Joi.number(),
 				hora_abre: Joi.number(),
 				hora_ini_almoco: Joi.number(),
@@ -90,9 +72,9 @@ describe('Contract: info_site', () => {
 
 			request
 				.post('/info-site')
-				.send(newNewsletter)
+				.send(create)
 				.end((err, res) => {
-					joiAssert(res.body, newsletter);
+               joiAssert(res.body, item);
 					done(err);
 				});
 		});
@@ -100,20 +82,10 @@ describe('Contract: info_site', () => {
 
 	describe('PUT /info-site/{id}', () => {
 		it(`should update a ${table}`, (done) => {
-			const updatedNewsletter = {
-				id: 2,
-				hora_abre: 4,
-				hora_ini_almoco: 4,
-				hora_fim_almoco: 4,
-				hora_fecha: 4,
-				hora_abre_fds: 4,
-				email: 'emailteste3@teste.com',
-				dia_funcional: 4,
-			};
 			const updatedCount = Joi.array().items(1);
 			request
 				.put('/info-site/1')
-				.send(updatedNewsletter)
+				.send(update)
 				.end((err, res) => {
 					joiAssert(res.body, updatedCount);
 					done(err);

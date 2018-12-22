@@ -30,7 +30,7 @@ export default (sequelize, DataTypes) => {
 			allowNull: false,
 		},
 		UF: {
-			type: DataTypes.INTEGER(1),
+			type: DataTypes.INTEGER(11),
 			allowNull: false,
 		},
 		googlemaps: {
@@ -38,7 +38,7 @@ export default (sequelize, DataTypes) => {
 			allowNull: false,
 		},
 		ordem: {
-			type: DataTypes.BOOLEAN,
+			type: DataTypes.INTEGER(5),
 			allowNull: false,
 		},
 	});

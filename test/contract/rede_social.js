@@ -1,22 +1,22 @@
+import seed from '../seed.js';
+
+const { rede_social } = seed;
+
 describe('Contract: rede social', () => {
 	const table = '\'rede_social\'';
 	const { Rede_social } = app.datasource.models;
-	const defaultRedeSocial = {
-		id: 1,
-		url: 'https://facebook.com.br/teste',
-		rede: 1,
-	};
+	const { create, update, std } = rede_social;
 
 	beforeEach((done) => {
 		Rede_social
 			.destroy({ where: {} })
-			.then(() => Rede_social.create(defaultRedeSocial))
+			.then(() => Rede_social.create(std))
 			.then(() => done());
 	});
 
 	describe('GET /rede-social', () => {
 		it(`should return a list of  ${table}`, (done) => {
-			const adminList = Joi.array().items(Joi.object().keys({
+			const listItens = Joi.array().items(Joi.object().keys({
 				id: Joi.number(),
 				url: Joi.string(),
 				rede: Joi.number(),
@@ -25,7 +25,7 @@ describe('Contract: rede social', () => {
 			request
 				.get('/rede-social')
 				.end((err, res) => {
-					joiAssert(res.body, adminList);
+               joiAssert(res.body, listItens);
 					done(err);
 				});
 		});
@@ -33,7 +33,7 @@ describe('Contract: rede social', () => {
 
 	describe('GET /rede-social/{id}', () => {
 		it(`should return a ${table}`, (done) => {
-			const admin = Joi.object().keys({
+			const item = Joi.object().keys({
 				id: Joi.number(),
 				url: Joi.string(),
 				rede: Joi.number(),
@@ -42,7 +42,7 @@ describe('Contract: rede social', () => {
 			request
 				.get('/rede-social/1')
 				.end((err, res) => {
-					joiAssert(res.body, admin);
+					joiAssert(res.body, item);
 					done(err);
 				});
 		});
@@ -50,13 +50,7 @@ describe('Contract: rede social', () => {
 
 	describe('POST /rede-social', () => {
 		it(`should create a ${table}`, (done) => {
-			const newUsuario = {
-				id: 2,
-				url: 'https://facebook.com.br/teste2',
-				rede: 4,
-			};
-
-			const admin = Joi.object().keys({
+			const item = Joi.object().keys({
 				id: Joi.number(),
 				url: Joi.string(),
 				rede: Joi.number(),
@@ -64,25 +58,20 @@ describe('Contract: rede social', () => {
 
 			request
 				.post('/rede-social')
-				.send(newUsuario)
+				.send(create)
 				.end((err, res) => {
-					joiAssert(res.body, admin);
+					joiAssert(res.body, item);
 					done(err);
 				});
 		});
 	});
 
 	describe('PUT /rede-social/{id}', () => {
-		it(`should update a ${table}`, (done) => {
-			const updatedUsuario = {
-				id: 2,
-				url: 'https://facebook.com.br/teste2',
-				rede: 3,
-			};
+		it(`should update a ${table}`, (done) => {         
 			const updatedCount = Joi.array().items(1);
 			request
 				.put('/rede-social/1')
-				.send(updatedUsuario)
+				.send(update)
 				.end((err, res) => {
 					joiAssert(res.body, updatedCount);
 					done(err);

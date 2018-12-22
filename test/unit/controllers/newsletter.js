@@ -1,7 +1,11 @@
 import NewsletterController from '../../../controllers/newsletter';
+import seed from '../../seed.js';
+
+const { newsletter } = seed;
 
 describe('Controller: rede social', () => {
 	const table = '\'rede_social\'';
+   const { create, update, std } = newsletter; 
 
 	describe(`Get all ${table}: getAll()`, () => {
 		it(`should return a list of ${table}`, () => {

@@ -1,22 +1,22 @@
+import seed from '../seed.js';
+
+const { newsletter } = seed;
+
 describe('Contract: newsletter', () => {
 	const table = '\'newsletter\'';
 	const { Newsletter } = app.datasource.models;
-	const defaultNewsletter = {
-		id: 1,
-		nome: 'teste',
-		email: 'emailteste@email.com',
-	};
+   const { create, update, std } = newsletter;
 
 	beforeEach((done) => {
 		Newsletter
 			.destroy({ where: {} })
-			.then(() => Newsletter.create(defaultNewsletter))
+			.then(() => Newsletter.create(std))
 			.then(() => done());
 	});
 
 	describe('GET /newsletter', () => {
 		it(`should return a list of  ${table}`, (done) => {
-			const newsletterList = Joi.array().items(Joi.object().keys({
+         const listItens = Joi.array().items(Joi.object().keys({
 				id: Joi.number(),
 				nome: Joi.string(),
 				email: Joi.string(),
@@ -25,7 +25,7 @@ describe('Contract: newsletter', () => {
 			request
 				.get('/newsletter')
 				.end((err, res) => {
-					joiAssert(res.body, newsletterList);
+					joiAssert(res.body, listItens);
 					done(err);
 				});
 		});
@@ -33,7 +33,7 @@ describe('Contract: newsletter', () => {
 
 	describe('GET /newsletter/{id}', () => {
 		it(`should return a ${table}`, (done) => {
-			const admin = Joi.object().keys({
+			const newsletter = Joi.object().keys({
 				id: Joi.number(),
 				nome: Joi.string(),
 				email: Joi.string(),
@@ -42,7 +42,7 @@ describe('Contract: newsletter', () => {
 			request
 				.get('/newsletter/1')
 				.end((err, res) => {
-					joiAssert(res.body, admin);
+					joiAssert(res.body, newsletter);
 					done(err);
 				});
 		});
@@ -50,13 +50,7 @@ describe('Contract: newsletter', () => {
 
 	describe('POST /newsletter', () => {
 		it(`should create a ${table}`, (done) => {
-			const newNewsletter = {
-				id: 2,
-				nome: 'teste2',
-				email: 'emailteste2@email.com',
-			};
-
-			const newsletter = Joi.object().keys({
+			const item = Joi.object().keys({
 				id: Joi.number(),
 				nome: Joi.string(),
 				email: Joi.string(),
@@ -64,9 +58,9 @@ describe('Contract: newsletter', () => {
 
 			request
 				.post('/newsletter')
-				.send(newNewsletter)
+				.send(create)
 				.end((err, res) => {
-					joiAssert(res.body, newsletter);
+					joiAssert(res.body, item);
 					done(err);
 				});
 		});
@@ -74,15 +68,10 @@ describe('Contract: newsletter', () => {
 
 	describe('PUT /newsletter/{id}', () => {
 		it(`should update a ${table}`, (done) => {
-			const updatedNewsletter = {
-				id: 2,
-				nome: 'teste4',
-				email: 'emailteste4@email.com',
-			};
 			const updatedCount = Joi.array().items(1);
 			request
 				.put('/newsletter/1')
-				.send(updatedNewsletter)
+				.send(update)
 				.end((err, res) => {
 					joiAssert(res.body, updatedCount);
 					done(err);

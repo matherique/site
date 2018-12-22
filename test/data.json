@@ -1,4 +1,4 @@
-   {
+{
     "usuario":{
         "std":{
             "id":1,
@@ -207,17 +207,17 @@
         "std":{
             "id":1,
             "url":"https://júlio césar.net",
-            "icone":2
+            "rede": 2
         },
         "create":{
             "id":2,
             "url":"http://guilherme.name",
-            "icone":2
+            "rede":2
         },
         "update":{
             "id":1,
             "url":"http://víctor.org",
-            "icone":2
+            "rede":2
         }
     },
     "menu":{
