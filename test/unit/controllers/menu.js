@@ -1,20 +1,20 @@
-import ContatoController from '../../../controllers/contato';
+import MenuController from '../../../controllers/menu';
 import seed from '../../seed.js';
 
-const { contato } = seed;
+const { menu } = seed;
 
-describe('Controller: contato', () => {
-	const table = '\'contato\'';
-   const { create, update, std } = contato;
+describe('Controller: menu', () => {
+	const table = '\'menu\'';
+   const { create, update, std } = menu;
 
 	describe(`Get all ${table}: getAll()`, () => {
 		it(`should return a list of ${table}`, () => {
-			const Contato = {
+			const Menu = {
 				findAll: td.function(),
 			};
 		   
-			td.when(Contato.findAll({})).thenResolve(std);
-			const controller = new ContatoController(Contato);
+			td.when(Menu.findAll({})).thenResolve(std);
+			const controller = new MenuController(Menu);
 
 			return controller.getAll()
 				.then(response => expect(response.data).to.be.eql(std));
@@ -23,12 +23,12 @@ describe('Controller: contato', () => {
 
 	describe(`Get a ${table} by id: getById()`, () => {
 		it(`should return a ${table} by id`, () => {
-			const Contato = {
+			const Menu = {
 				findOne: td.function(),
 			};
 
-			td.when(Contato.findOne({ where: { id: 1 } })).thenResolve(std);
-			const controller = new ContatoController(Contato);
+			td.when(Menu.findOne({ where: { id: 1 } })).thenResolve(std);
+			const controller = new MenuController(Menu);
 
 			return controller.getById({ id: 1 })
 				.then(response => expect(response.data).to.be.eql(std));
@@ -37,15 +37,15 @@ describe('Controller: contato', () => {
 
 	describe(`Create a ${table}: create()`, () => {
 		it(`should create a ${table}`, () => {
-			const Contato = {
+			const Menu = {
 				create: td.function(),
 			};
          const requestBody = std;
          delete requestBody.id;			
 
-			td.when(Contato.create(requestBody)).thenResolve(std);
+			td.when(Menu.create(requestBody)).thenResolve(std);
 
-			const controller = new ContatoController(Contato);
+			const controller = new MenuController(Menu);
 
 			return controller.create(requestBody)
 				.then((response) => {
@@ -57,16 +57,16 @@ describe('Controller: contato', () => {
 
 	describe(`Update a ${table} by id: update()`, () => {
 		it(`should update a ${table} by id`, () => {
-			const Contato = {
+			const Menu = {
 				update: td.function(),
 			};
 			const requestBody = std;
          delete requestBody.id;
 
 
-			td.when(Contato.update(requestBody, { where: { id: 1 } })).thenResolve(std);
+			td.when(Menu.update(requestBody, { where: { id: 1 } })).thenResolve(std);
 
-			const controller = new ContatoController(Contato);
+			const controller = new MenuController(Menu);
 
 			return controller.update(requestBody, { id: 1 })
 				.then((response) => {
@@ -78,13 +78,13 @@ describe('Controller: contato', () => {
 
 	describe(`Delete a ${table} by id: dalete()`, () => {
 		it(`should delete a ${table} by id`, () => {
-			const Contato = {
+			const Menu = {
 				destroy: td.function(),
 			};
 
-			td.when(Contato.destroy({ where: { id: 1 } })).thenResolve({});
+			td.when(Menu.destroy({ where: { id: 1 } })).thenResolve({});
 
-			const controller = new ContatoController(Contato);
+			const controller = new MenuController(Menu);
 
 			return controller.delete({ id: 1 })
 				.then(response => expect(response.statusCode).to.be.eql(204));
