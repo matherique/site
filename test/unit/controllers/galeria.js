@@ -1,20 +1,20 @@
-import ConfigController from '../../../controllers/config';
+import GaleriaController from '../../../controllers/galeria';
 import seed from '../../seed.js';
 
-const { config } = seed;
+const { galeria } = seed;
 
-describe('Controller: config', () => {
-	const table = '\'config\'';
-   const { create, update, std } = config;
+describe('Controller: galeria', () => {
+	const table = '\'galeria\'';
+   const { create, update, std } = galeria;
 
 	describe(`Get all ${table}: getAll()`, () => {
 		it(`should return a list of ${table}`, () => {
-			const Config = {
+			const Galeria = {
 				findAll: td.function(),
 			};
 		   
-			td.when(Config.findAll({})).thenResolve(std);
-			const controller = new ConfigController(Config);
+			td.when(Galeria.findAll({})).thenResolve(std);
+			const controller = new GaleriaController(Galeria);
 
 			return controller.getAll()
 				.then(response => expect(response.data).to.be.eql(std));
@@ -23,12 +23,12 @@ describe('Controller: config', () => {
 
 	describe(`Get a ${table} by id: getById()`, () => {
 		it(`should return a ${table} by id`, () => {
-			const Config = {
+			const Galeria = {
 				findOne: td.function(),
 			};
 
-			td.when(Config.findOne({ where: { id: 1 } })).thenResolve(std);
-			const controller = new ConfigController(Config);
+			td.when(Galeria.findOne({ where: { id: 1 } })).thenResolve(std);
+			const controller = new GaleriaController(Galeria);
 
 			return controller.getById({ id: 1 })
 				.then(response => expect(response.data).to.be.eql(std));
@@ -37,15 +37,15 @@ describe('Controller: config', () => {
 
 	describe(`Create a ${table}: create()`, () => {
 		it(`should create a ${table}`, () => {
-			const Config = {
+			const Galeria = {
 				create: td.function(),
 			};
          const requestBody = std;
          delete requestBody.id;			
 
-			td.when(Config.create(requestBody)).thenResolve(std);
+			td.when(Galeria.create(requestBody)).thenResolve(std);
 
-			const controller = new ConfigController(Config);
+			const controller = new GaleriaController(Galeria);
 
 			return controller.create(requestBody)
 				.then((response) => {
@@ -57,16 +57,16 @@ describe('Controller: config', () => {
 
 	describe(`Update a ${table} by id: update()`, () => {
 		it(`should update a ${table} by id`, () => {
-			const Config = {
+			const Galeria = {
 				update: td.function(),
 			};
 			const requestBody = std;
          delete requestBody.id;
 
 
-			td.when(Config.update(requestBody, { where: { id: 1 } })).thenResolve(std);
+			td.when(Galeria.update(requestBody, { where: { id: 1 } })).thenResolve(std);
 
-			const controller = new ConfigController(Config);
+			const controller = new GaleriaController(Galeria);
 
 			return controller.update(requestBody, { id: 1 })
 				.then((response) => {
@@ -78,13 +78,13 @@ describe('Controller: config', () => {
 
 	describe(`Delete a ${table} by id: dalete()`, () => {
 		it(`should delete a ${table} by id`, () => {
-			const Config = {
+			const Galeria = {
 				destroy: td.function(),
 			};
 
-			td.when(Config.destroy({ where: { id: 1 } })).thenResolve({});
+			td.when(Galeria.destroy({ where: { id: 1 } })).thenResolve({});
 
-			const controller = new ConfigController(Config);
+			const controller = new GaleriaController(Galeria);
 
 			return controller.delete({ id: 1 })
 				.then(response => expect(response.statusCode).to.be.eql(204));

@@ -1,11 +1,10 @@
-# Site 
+# API Site 
 
-### Lista de Conteudo
+### Conteudo
 
 **Definição**
 
 `GET /conteudo`
-
 
 **Resposta**
 ```json

@@ -14,4 +14,4 @@ export default {
    },
 	jwtSecret: 'huehuesession',
 	jwtSession: { session: false },
-};
+}
