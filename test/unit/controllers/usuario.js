@@ -1,36 +1,35 @@
 import UsuarioController from '../../../controllers/usuario';
 import seed from '../../seed';
 
-// dados testes 
 const { usuario } = seed;
 
 describe('Controller: usuario', () => {
 	const table = '\'usuario\'';
+   const { create, update, std } = usuario;
 
 	describe(`Get all ${table}: getAll()`, () => {
 		it(`should return a list of ${table}`, () => {
 			const Usuario = {
 				findAll: td.function(),
 			};
-			const expectedResponse = usuario.default;
-			td.when(Usuario.findAll({})).thenResolve(expectedResponse);
+			
+			td.when(Usuario.findAll({})).thenResolve(std);
 			const usuarioController = new UsuarioController(Usuario);
 
 			return usuarioController.getAll()
-				.then(response => expect(response.data).to.be.eql(expectedResponse));
+				.then(response => expect(response.data).to.be.eql(std));
 		});
 	});
 
 	describe(`Get a ${table} by id: getById()`, () => {
 		it(`should return a ${table} by id`, () => {
 			const Usuario = {	findOne: td.function(), };
-
-			const expectedResponse = usuario.default;
-			td.when(Usuario.findOne({ where: { id: 1 } })).thenResolve(expectedResponse);
+		
+			td.when(Usuario.findOne({ where: { id: 1 } })).thenResolve(std);
 			const usuarioController = new UsuarioController(Usuario);
 
 			return usuarioController.getById({ id: 1 })
-				.then(response => expect(response.data).to.be.eql(expectedResponse));
+				.then(response => expect(response.data).to.be.eql(std));
 		});
 	});
 
@@ -41,17 +40,16 @@ describe('Controller: usuario', () => {
 			};
     
 			const requestBody = usuario.create;
-      delete requestBody.id;
-      const expectedResponse = usuario.create;
-
-			td.when(Usuario.create(requestBody)).thenResolve(expectedResponse);
+         delete requestBody.id;
+         
+			td.when(Usuario.create(requestBody)).thenResolve(std);
 
 			const usuarioController = new UsuarioController(Usuario);
 
 			return usuarioController.create(requestBody)
 				.then((response) => {
 					expect(response.statusCode).to.be.eql(201);
-					expect(response.data).to.be.eql(expectedResponse);
+					expect(response.data).to.be.eql(std);
 				});
 		});
 	});
@@ -61,17 +59,17 @@ describe('Controller: usuario', () => {
 			const Usuario = {
 				update: td.function(),
 			};
-			const requestBody = usuario.create;      
+         const requestBody = std;
 			delete requestBody.id;                   
-			const expectedResponse = usuario.create; 
-			td.when(Usuario.update(requestBody, { where: { id: 1 } })).thenResolve(expectedResponse);
+
+			td.when(Usuario.update(requestBody, { where: { id: 1 } })).thenResolve(std);
 
 			const usuarioController = new UsuarioController(Usuario);
 
 			return usuarioController.update(requestBody, { id: 1 })
 				.then((response) => {
 					expect(response.statusCode).to.be.eql(201);
-					expect(response.data).to.be.eql(expectedResponse);
+					expect(response.data).to.be.eql(std);
 				});
 		});
 	});
