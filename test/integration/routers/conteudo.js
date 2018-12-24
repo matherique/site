@@ -1,17 +1,23 @@
 import seed from '../../seed';
 
-const { conteudo } = seed;
+const { conteudo, menu } = seed;
 
-describe('Routers: Conteudo', () => {
-	const table = '\'conteudo\'';
-	const { Conteudo } = app.datasource.models;
+describe('Routers: Conteudo', () => {   
+   const table = '\'conteudo\'';
+	const { Conteudo, Menu } = app.datasource.models;
    const { create, std, update } = conteudo;
+   const std_menu = menu.std;
 
 	beforeEach((done) => {
-      Conteudo		
-			.destroy({ where: {} })
-			.then(() => Conteudo.create(std))
-			.then(() => done());
+      Menu
+         .destroy({ where: {} })
+			.then(() => Menu.create(std_menu))
+			.then(() => {      
+            Conteudo		
+               .destroy({ where: {} })
+               .then(() => Conteudo.create(std))
+               .then(() => done());         
+         });
 	});
 
 	describe('GET /conteudo', () => {

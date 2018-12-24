@@ -36,8 +36,8 @@
             "cidade":1,
             "UF":11,
             "googlemaps":"https://maps.google.com.br/",
-            "ordem":2
-
+            "ordem":2,
+            "info_site_id": 1
         },
         "create":{
             "id":2,
@@ -49,8 +49,8 @@
             "cidade":2,
             "UF":10,
             "googlemaps":"https://maps.google.com.br",
-            "ordem":2
-            
+            "ordem":2,
+            "info_site_id": 1
         },
         "update":{
             "id":1,
@@ -62,8 +62,8 @@
             "cidade":2,
             "UF":10,
             "googlemaps":"https://maps.google.com.br",
-            "ordem":2
-
+            "ordem":2,
+            "info_site_id": 1
         }
     },
     "info_site":{
@@ -77,7 +77,7 @@
             "email":"Slvia93@bol.com.br",
             "dia_funcional":3
         },
-        "create":{
+        "create":{ 
             "id":2,
             "hora_abre":2,
             "hora_ini_almoco":3,
@@ -107,9 +107,9 @@
             "cache_control":2,
             "language":2,
             "robots":2,
-            "rodape":"ex ut et"
-
-        },
+            "rodape":"ex ut et",
+            "info_site_id": 1
+         },
         "create":{
             "id":2,
             "title":"dolor aut rerum",
@@ -118,8 +118,8 @@
             "cache_control":3,
             "language":2,
             "robots":1,
-            "rodape":"fugiat sapiente et"
-
+            "rodape":"fugiat sapiente et",
+            "info_site_id": 1
         },
         "update":{
             "id":1,
@@ -129,8 +129,8 @@
             "cache_control":2,
             "language":2,
             "robots":2,
-            "rodape":"sequi atque eum"
-
+            "rodape":"sequi atque eum",
+            "info_site_id": 1
         }
     },
     "newsletter":{
@@ -242,21 +242,23 @@
             "id":1,
             "titulo":"saepe",
             "subtitulo":"Beatae illo totam consequuntur. Blanditiis quo labore minus ullam temporibus commodi.",
-            "conteudo":"eum optio quia"
+            "conteudo":"Quaerat voluptatem dolore quia accusantium repellendus voluptas ea assumenda soluta.\nNesciunt consequatur ratione veniam illum sit.\nAnimi nemo in similique eaque.\nVoluptatibus illo dolorem nulla.\nAt minima consequuntur et rerum rerum reprehenderit quis et.",
+            "menu_id": 1
 
         },
         "create":{
             "id":2,
             "titulo":"rerum",
             "subtitulo":"Dolores quisquam porro. Sint aut repudiandae in. Odit natus ut rerum. Illo corporis rerum. Quia vitae occaecati eveniet voluptatum atque exercitationem sunt magnam optio.",
-            "conteudo":"expedita"
-
+            "conteudo":"Quaerat voluptatem dolore quia accusantium repellendus voluptas ea assumenda soluta.\nNesciunt consequatur ratione veniam illum sit.\nAnimi nemo in similique eaque.\nVoluptatibus illo dolorem nulla.\nAt minima consequuntur et rerum rerum reprehenderit quis et.",
+            "menu_id": 1
         },
         "update":{
             "id":1,
             "titulo":"omnis",
             "subtitulo":"Consequatur ipsa commodi minus ea sint animi eum. Aut commodi optio ipsum cum quaerat voluptas molestiae eius. Architecto est dolores rem amet sint. Et aut autem earum mollitia delectus accusantium itaque deleniti. Dolores est saepe vel.",
-            "conteudo":"Quaerat voluptatem dolore quia accusantium repellendus voluptas ea assumenda soluta.\nNesciunt consequatur ratione veniam illum sit.\nAnimi nemo in similique eaque.\nVoluptatibus illo dolorem nulla.\nAt minima consequuntur et rerum rerum reprehenderit quis et."
+            "conteudo":"Quaerat voluptatem dolore quia accusantium repellendus voluptas ea assumenda soluta.\nNesciunt consequatur ratione veniam illum sit.\nAnimi nemo in similique eaque.\nVoluptatibus illo dolorem nulla.\nAt minima consequuntur et rerum rerum reprehenderit quis et.",
+            "menu_id": 1
         }
     },
     "galeria":{
@@ -281,28 +283,28 @@
     },
     "imagem":{
         "std":{
-            "id":1,
-
+            "id":1,   
             "imagem":"http://lorempixel.com/640/480/cats",
             "situacao":1,
             "ordem":1,
-            "legenda":"Placeat iste suscipit et."
+            "legenda":"Placeat iste suscipit et.",
+            "galeria_id": 1
         },
         "create":{
             "id":2,
-
             "imagem":"http://lorempixel.com/640/480/abstract",
             "situacao":1,
             "ordem":11,
-            "legenda":"Quam quia et nihil."
+            "legenda":"Quam quia et nihil.",
+            "galeria_id" : 1
         },
         "update":{
             "id":1,
-
             "imagem":"http://lorempixel.com/640/480/technics",
             "situacao":2,
-            "ordem":15,
-            "legenda":"Omnis praesentium iste."
+            "ordem": 15,
+            "legenda":"Omnis praesentium iste.",
+            "galeria_id" : 1
         }
     }
 }

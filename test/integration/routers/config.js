@@ -1,16 +1,23 @@
 import seed from '../../seed';
 
-const { config } = seed;
+const { config, info_site } = seed;
+
 describe('Routers: config', () => {
 	const table = '\'config\'';
-	const { Config } = app.datasource.models;
+   const { Config, Info_site } = app.datasource.models;
 	const { create, update, std }  = config;
+   const std_info_site = info_site.std;
    
 	beforeEach((done) => {
-		Config
-			.destroy({ where: {} })
-			.then(() => Config.create(std))
-			.then(() => done());
+      Info_site
+      	.destroy({ where: {} })
+         .then(() => Info_site.create(std_info_site))
+         .then(() => {                 
+            Config
+               .destroy({ where: {} })
+               .then(() => Config.create(std))
+               .then(() => done());
+         });
 	});
 
 	describe('GET /config', () => {

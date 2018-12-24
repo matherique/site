@@ -34,6 +34,9 @@ export default (sequelize, DataTypes) => {
 			allowNull: false,
 		},
   });
+  sequelize.models.config.belongsTo(InfoSite, { as: 'info_site' });
+  sequelize.models.endereco.belongsTo(InfoSite, { as: 'info_site'} );
+
   return InfoSite;
 
 }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node index.js",
+    "start": "nodemon ./index.js --exec babel-node",
     "testa": "npm run test-unit && npm run test-integration && npm run test-contract",
     "test": "npm run test-unit && npm run test-integration && npm run test-contract",
     "test-integration": "mocha --opts test/integration/mocha.opts test/integration/**/*.js",

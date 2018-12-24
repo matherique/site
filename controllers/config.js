@@ -1,19 +1,24 @@
 import httpsStatus from 'http-status';
 
-const defaultResponse = (data, statusCode = httpsStatus.OK) => ({ data, statusCode });
+const defaultResponse = (data, statusCode = httpsStatus.OK) => {
+	console.log(data);
+	return ({ data, statusCode });
+};
 const errorResponse = (message, statusCode = httpsStatus.BAD_REQUEST) => {
-	defaultResponse({ error: message }, statusCode);
+	console.error(`ERROR: ${message}`);
+	return defaultResponse({ error: message }, statusCode);
 };
 
 export default class ConfigController {
-	constructor(config) {      
-		this.Config = config;
+	constructor({ Config, Info_site }) {
+		this.Config = Config;
+		this.InfoSite = Info_site;
 	}
 
 	getAll() {
 		return this.Config.findAll({})
-			.then(result => defaultResponse(result))
-			.catch(error => errorResponse(error.message));
+			.then(result => defaultResponse(result, httpsStatus.OK))
+			.catch(error => errorResponse(error.message, httpsStatus.NO_CONTENT));
 	}
 
 	getById(id) {
@@ -39,4 +44,11 @@ export default class ConfigController {
 			.then(result => defaultResponse(result, httpsStatus.NO_CONTENT))
 			.catch(error => errorResponse(error.message, httpsStatus.UNPROCESSABLE_ENTITY));
 	}
+
+	getByIdWithAssoc(params) {
+		return this.Config.findAll({ where: params, include: [{ model: this.InfoSite, as: 'info_site' }] })
+			.then(result => defaultResponse(result, httpsStatus.OK))
+			.catch(error => errorResponse(error.message, httpsStatus.NO_CONTENT));
+	}
+
 }

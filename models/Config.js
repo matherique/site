@@ -33,6 +33,19 @@ export default (sequelize, DataType) => {
       type: DataType.TEXT(),
       allowNull: false,
     },
-  })
+    info_site_id: {
+      type: DataType.INTEGER(),
+      references: { model: 'info_site', key: 'id'},
+      onDelete: 'CASCADE',
+      allowNull: false
+    }
+  });
+  
+  Config.associate = (models) => {
+    Config.belongsTo(models.info_site, {
+      foreingKey: 'info_site_id',
+    });
+  }
+  
   return Config;
 };

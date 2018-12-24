@@ -1,17 +1,24 @@
 import seed from '../../seed';
 
-const { imagem } = seed;
+const { imagem, galeria } = seed;
 
 describe('Routers: Imagem', () => {
-	const table = '\'imagem\'';
-	const { Imagem } = app.datasource.models;
+   const table = '\'imagem\'';
+	const { Imagem, Galeria } = app.datasource.models;
    const { create, std, update } = imagem;
-
+   const std_galeria = galeria.std;
+   
 	beforeEach((done) => {
-      Imagem		
-			.destroy({ where: {} })
-			.then(() => Imagem.create(std))
-			.then(() => done());
+      Galeria	
+         .destroy({ where: {} })
+			.then(() => Galeria.create(std_galeria))
+			.then(() => {           
+            Imagem		
+               .destroy({ where: {} })
+               .then(() => Imagem.create(std))
+               .then(() => done());         
+         });
+
 	});
 
 	describe('GET /imagem', () => {

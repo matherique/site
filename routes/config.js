@@ -4,8 +4,7 @@ import ConfigController from '../controllers/config';
 const router = Router();
 
 export default (app) => {
-	const { Config } = app.datasource.models;
-	const controller = new ConfigController(Config);
+	const controller = new ConfigController(app.datasource.models);
 
 	router.get('/', (_, res) => {
 		controller.getAll()
@@ -35,7 +34,6 @@ export default (app) => {
 				res.status(resp.statusCode);
 				res.json(resp.data);
 			}).catch((resp) => {
-            console.log('error', resp);
 				res.status(resp.statusCode);
 				res.json(resp.data);
 			});
@@ -55,8 +53,20 @@ export default (app) => {
 	router.delete('/:id', (req, res) => {
 		controller.delete(req.params)
 			.then((response) => {
-				res.status(response.statusCode);
-				res.json(response.data);
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			});
+	});
+
+
+	router.get('/:id/info-site', (req, res) => {
+		controller.getByIdWithAssoc(req.params)
+			.then((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			}).catch((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
 			});
 	});
 
