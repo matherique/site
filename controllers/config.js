@@ -46,7 +46,14 @@ export default class ConfigController {
 	}
 
 	getByIdWithAssoc(params) {
-		return this.Config.findAll({ where: params, include: [{ model: this.InfoSite, as: 'info_site' }] })
+		return this.Config.findOne({ where: params, include: [{ model: this.InfoSite, as: 'info_site' }] })
+			.then(result => defaultResponse(result, httpsStatus.OK))
+			.catch(error => errorResponse(error.message, httpsStatus.NO_CONTENT));
+	}
+
+	getAllIdWithAssoc() {
+		return this.Config.findAll({ include: [{ model: this.InfoSite, as: 'info_site' }] })
+		//return this.Config.findAll({ where: {}, include: [{ model: this.InfoSite, as: 'info_site' }] })
 			.then(result => defaultResponse(result, httpsStatus.OK))
 			.catch(error => errorResponse(error.message, httpsStatus.NO_CONTENT));
 	}

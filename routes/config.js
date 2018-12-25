@@ -4,7 +4,8 @@ import ConfigController from '../controllers/config';
 const router = Router();
 
 export default (app) => {
-	const controller = new ConfigController(app.datasource.models);
+	const { Config, Info_site } = app.datasource.models;
+	const controller = new ConfigController({ Config, Info_site });
 
 	router.get('/', (_, res) => {
 		controller.getAll()
@@ -58,9 +59,19 @@ export default (app) => {
 			});
 	});
 
-
 	router.get('/:id/info-site', (req, res) => {
 		controller.getByIdWithAssoc(req.params)
+			.then((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			}).catch((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			});
+	});
+
+	router.get('/info-site', (req, res) => {
+		controller.getAllIdWithAssoc()
 			.then((resp) => {
 				res.status(resp.statusCode);
 				res.json(resp.data);
