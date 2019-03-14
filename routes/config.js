@@ -18,8 +18,30 @@ export default (app) => {
 			});
 	});
 
+	router.get('/info-site', (_, res) => {
+		controller.getAllIdWithAssoc()
+			.then((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			}).catch((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			});
+	});
+
 	router.get('/:id', (req, res) => {
 		controller.getById(req.params)
+			.then((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			}).catch((resp) => {
+				res.status(resp.statusCode);
+				res.json(resp.data);
+			});
+	});
+
+	router.get('/:id/info-site', (req, res) => {
+		controller.getByIdWithAssoc(req.params)
 			.then((resp) => {
 				res.status(resp.statusCode);
 				res.json(resp.data);
@@ -54,28 +76,6 @@ export default (app) => {
 	router.delete('/:id', (req, res) => {
 		controller.delete(req.params)
 			.then((response) => {
-				res.status(resp.statusCode);
-				res.json(resp.data);
-			});
-	});
-
-	router.get('/:id/info-site', (req, res) => {
-		controller.getByIdWithAssoc(req.params)
-			.then((resp) => {
-				res.status(resp.statusCode);
-				res.json(resp.data);
-			}).catch((resp) => {
-				res.status(resp.statusCode);
-				res.json(resp.data);
-			});
-	});
-
-	router.get('/info-site', (req, res) => {
-		controller.getAllIdWithAssoc()
-			.then((resp) => {
-				res.status(resp.statusCode);
-				res.json(resp.data);
-			}).catch((resp) => {
 				res.status(resp.statusCode);
 				res.json(resp.data);
 			});

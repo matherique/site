@@ -30,7 +30,6 @@ export default (app) => {
 	});
 
 	router.post('/', (req, res) => {
-
 		controller.create(req.body)
 			.then((resp) => {
 				res.status(resp.statusCode);

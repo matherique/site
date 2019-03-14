@@ -5,19 +5,22 @@ const { config } = seed;
 
 describe('Controller: config', () => {
 	const table = '\'config\'';
-   const { create, update, std } = config;
+	const { create, update, std } = config;
 
 	describe(`Get all ${table}: getAll()`, () => {
 		it(`should return a list of ${table}`, () => {
 			const Config = {
 				findAll: td.function(),
 			};
-		   
+
 			td.when(Config.findAll({})).thenResolve(std);
 			const controller = new ConfigController(Config);
+			console.log(controller);
 
 			return controller.getAll()
-				.then(response => expect(response.data).to.be.eql(std));
+				.then(response => {
+					expect(response.data).to.be.eql(std)
+				});
 		});
 	});
 
@@ -40,8 +43,8 @@ describe('Controller: config', () => {
 			const Config = {
 				create: td.function(),
 			};
-         const requestBody = std;
-         delete requestBody.id;			
+			const requestBody = std;
+			delete requestBody.id;
 
 			td.when(Config.create(requestBody)).thenResolve(std);
 
@@ -61,7 +64,7 @@ describe('Controller: config', () => {
 				update: td.function(),
 			};
 			const requestBody = std;
-         delete requestBody.id;
+			delete requestBody.id;
 
 
 			td.when(Config.update(requestBody, { where: { id: 1 } })).thenResolve(std);

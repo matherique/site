@@ -17,7 +17,19 @@ export default (sequelize, DataType) => {
 			type: DataType.TEXT,
 			allowNull: false
 		},
+		menu_id: {
+			type: DataType.INTEGER(),
+			references: { model: 'info_site', key: 'id' },
+			onDelete: 'CASCADE',
+			allowNull: false,
+		}
 	});
-   
-   return Conteudo;
+
+	Conteudo.associate = (models) => {
+		Conteudo.belongsTo(models.menu, {
+			foreingKey: 'menu_id',
+		});
+	};
+
+	return Conteudo;
 }

@@ -1,8 +1,7 @@
 import httpsStatus from 'http-status';
 
 const defaultResponse = (data, statusCode = httpsStatus.OK) => {
-	console.log(data);
-	return ({ data, statusCode });
+	return (data !== null) ? { data, statusCode: httpsStatus.OK } : { data: null, statusCode: httpsStatus.NO_CONTENT };
 };
 const errorResponse = (message, statusCode = httpsStatus.BAD_REQUEST) => {
 	console.error(`ERROR: ${message}`);
@@ -17,8 +16,8 @@ export default class ConfigController {
 
 	getAll() {
 		return this.Config.findAll({})
-			.then(result => defaultResponse(result, httpsStatus.OK))
-			.catch(error => errorResponse(error.message, httpsStatus.NO_CONTENT));
+			.then(result => defaultResponse(result))
+			.catch(error => errorResponse(error.message));
 	}
 
 	getById(id) {
@@ -47,15 +46,13 @@ export default class ConfigController {
 
 	getByIdWithAssoc(params) {
 		return this.Config.findOne({ where: params, include: [{ model: this.InfoSite, as: 'info_site' }] })
-			.then(result => defaultResponse(result, httpsStatus.OK))
-			.catch(error => errorResponse(error.message, httpsStatus.NO_CONTENT));
+			.then(result => defaultResponse(result))
+			.catch(error => errorResponse(error.message));
 	}
-
 	getAllIdWithAssoc() {
 		return this.Config.findAll({ include: [{ model: this.InfoSite, as: 'info_site' }] })
-		//return this.Config.findAll({ where: {}, include: [{ model: this.InfoSite, as: 'info_site' }] })
-			.then(result => defaultResponse(result, httpsStatus.OK))
-			.catch(error => errorResponse(error.message, httpsStatus.NO_CONTENT));
+			.then(result => defaultResponse(result))
+			.catch(error => errorResponse(error.message));
 	}
 
 }
